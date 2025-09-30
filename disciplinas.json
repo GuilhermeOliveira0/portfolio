@@ -1,0 +1,182 @@
+[
+  {
+    "id": "eng-software",
+    "semestre": 4,
+    "titulo": "Engenharia de Software",
+    "descricao": "Modelagem de sistemas, diagramas UML e boas práticas de desenvolvimento.",
+    "resumo": "A Engenharia de Software envolve os princípios e práticas voltadas para o desenvolvimento e manutenção de sistemas de software de alta qualidade. Abrange o estudo de metodologias como o modelo cascata, abordagens ágeis e DevOps. Atua em todas as etapas do ciclo de vida do software - desde a análise de requisitos, passando pelo projeto, codificação, testes, até a manutenção. Dá ênfase à gestão de projetos, garantindo que o software seja entregue dentro dos prazos e orçamentos estipulados.",
+    "professor": "JEFFERSON ANTONIO RIBEIRO PASSERINI",
+    "conteudo": [
+      "Introdução a Engenharia de Software",
+      "Processos de software",
+      "Processo Unificado RUP",
+      "Engenharia de Requisitos",
+      "Processo Unificado e a UML",
+      "Casos de Uso e Atores",
+      "Modelagem de Sistemas",
+      "Projeto de arquitetura",
+      "Diagrama de classes"
+    ],
+    "projeto": null
+  },
+  {
+    "id": "estrutura-dados",
+    "semestre": 4,
+    "titulo": "Estrutura de Dados",
+    "descricao": "Estudo de pilhas, filas, listas, árvores e grafos para otimização de algoritmos.",
+    "resumo": "A matéria de Estruturas de Dados é fundamental na ciência da computação, focando no estudo e implementação de formas eficientes de organizar e armazenar dados. Inclui o entendimento de estruturas como arrays, listas ligadas, pilhas, filas, árvores e grafos, cada uma adequada para diferentes tipos de operações e aplicações. A eficiência dessas estruturas impacta diretamente o desempenho dos algoritmos, sendo crucial para a resolução de problemas complexos e otimização de recursos em sistemas de software.",
+    "professor": "WILLIAN GUIMARAES BORGES",
+    "conteudo": [
+      "Revisão de tipos de dados", "Estruturas condicionais", "Laços de repetição", "Funções", "Ponteiros",
+      "Vetores (matriz 1D)", "Matrizes 2D", "Struct", "Lista encadeada", "Pilha e Fila",
+      "Fila com prioridade", "Fila com vetor", "Listas duplamente encadeadas", "Fila circular",
+      "Lista duplamente encadeada circular"
+    ],
+    "projeto": {
+      "titulo": "Projetos práticos com diferentes estruturas de dados.",
+      "link": "#"
+    }
+  },
+  {
+    "id": "banco-dados",
+    "semestre": 4,
+    "titulo": "Técnicas Avançadas de Banco de Dados Relacional e Não Relacional",
+    "descricao": "Modelagem, normalização, SQL avançado e conceitos de NoSQL.",
+    "resumo": "A matéria de Estruturas de Dados é fundamental na ciência da computação, focando no estudo e implementação de formas eficientes de organizar e armazenar dados. Inclui o entendimento de estruturas como arrays, listas ligadas, pilhas, filas, árvores e grafos, cada uma adequada para diferentes tipos de operações e aplicações. A eficiência dessas estruturas impacta diretamente o desempenho dos algoritmos, sendo crucial para a resolução de problemas complexos e otimização de recursos em sistemas de software.",
+    "professor": "Alexandre Aparecido Bernardes",
+    "conteudo": [
+      "Apresentação do SSMS e revisão de comandos DDL", "Tipos de junções e tabelas", "Subconsultas e views",
+      "Visões avançadas", "Stored Procedures", "Functions", "DCL (Data Control Language)"
+    ],
+    "projeto": {
+      "titulo": "Criação de um banco de dados completo para um sistema de e-commerce.",
+      "link": "https://github.com/GuilhermeOliveira0/"
+    }
+  },
+  {
+    "id": "mat-discreta",
+    "semestre": 4,
+    "titulo": "Matemática Discreta",
+    "descricao": "Lógica, teoria dos conjuntos, relações e grafos aplicados à computação.",
+    "resumo": "Matemática Discreta abrange os fundamentos teóricos essenciais para a computação, incluindo lógica, teoria dos conjuntos, grafos, combinatória e álgebra. Estuda-se proposições, quantificadores, provas, indução matemática e estruturas algébricas. Foca na resolução de problemas e modelagem de algoritmos, fornecendo a base para a análise e design de sistemas complexos.",
+    "professor": "Evanivaldo Castro Suiva Júnior",
+    "conteudo": [
+      "Lógica booleana e operações", "Relação de equivalência", "Introdução à teoria de conjuntos",
+      "Teoria de conjuntos", "Operações", "Intervalos numéricos", "Introdução à análise combinatória",
+      "Introdução à teoria de grafos", "Grafos e árvores"
+    ],
+    "projeto": null
+  },
+  {
+    "id": "ihc",
+    "semestre": 4,
+    "titulo": "Interação Humano-Computador",
+    "descricao": "Princípios de usabilidade, design de interfaces e experiência do usuário (UX).",
+    "professor": "A ser definido",
+    "conteudo": ["Design Centrado no Usuário", "Heurísticas de Usabilidade de Nielsen", "Prototipagem de Baixa e Alta Fidelidade (Figma)", "Testes de Usabilidade com Usuários"],
+    "projeto": null
+  },
+  {
+    "id": "lingua-inglesa",
+    "semestre": 4,
+    "titulo": "Língua Inglesa I",
+    "descricao": "Inglês técnico para leitura e escrita na área de tecnologia da informação.",
+    "resumo": "A matéria de Inglês é essencialmente um estudo abrangente da língua inglesa, com foco na compreensão e comunicação eficaz em todas as suas formas. Desde as habilidades básicas de conversação até a proficiência avançada, a disciplina engloba diversos aspectos linguísticos, culturais e comunicativos.",
+    "professor": "Carlos Alberto",
+    "conteudo": [
+      "First greetings", "The IPA", "The use of my, your, his and her", "Introducing another person",
+      "Oral activities based on To be", "The verb be. The uses and meaning of the verb",
+      "Numbers and saying goodbye", "English Test 1", "English Paper 1 - Steven Paul Jobs",
+      "Devolutiva da Prova 1 e do Trabalho 1", "What is this?", "Objects in the classroom, and the Definite article",
+      "Yes No q and Wh questions with be", "Prepositions of place: in, on, under, next to, between, behind",
+      "Where is Kevin's things"
+    ],
+    "projeto": null
+  },
+  {
+    "id": "prog-web-mobile",
+    "semestre": 4,
+    "titulo": "Programação Web e Mobile",
+    "descricao": "Desenvolvimento de aplicações responsivas e PWA (Progressive Web Apps).",
+    "professor": "A ser definido",
+    "conteudo": ["Tópicos avançados de front-end", "Desenvolvimento de aplicações mobile"],
+    "projeto": null
+  },
+  {
+    "id": "sistemas-operacionais",
+    "semestre": 4,
+    "titulo": "Organização de Computadores e Sistemas Operacionais",
+    "descricao": "Gerenciamento de processos, memória, arquivos e concorrência.",
+    "resumo": "A matéria de Estruturas de Dados é fundamental na ciência da computação, focando no estudo e implementação de formas eficientes de organizar e armazenar dados. Inclui o entendimento de estruturas como arrays, listas ligadas, pilhas, filas, árvores e grafos, cada uma adequada para diferentes tipos de operações e aplicações.",
+    "professor": "Wellington Luis Codinhoto Garcia",
+    "conteudo": [
+      "Estrutura de um computador", "Memória e seus níveis", "Memória volátil e não voláteis", "Funcionamento das memórias",
+      "ROM", "RAM", "Caches e registradores", "Unidade Aritmética e Lógica (UAL)", "Unidade de Controle",
+      "Registradores", "Trabalho sobre o CPU"
+    ],
+    "projeto": null
+  },
+  {
+    "id": "gestao-agil",
+    "semestre": 4,
+    "titulo": "Gestão Ágil de Projetos de Software",
+    "descricao": "Aplicação de metodologias ágeis como Scrum e Kanban no ciclo de vida do software.",
+    "resumo": "A gestão Ágil de Projetos de Software aplica princípios e práticas ágeis para entregar software de alta qualidade de forma rápida e eficiente. Utiliza metodologias como Scrum, Kanban e XP, que valorizam a colaboração, feedback contínuo e entregas incrementais.",
+    "professor": "André Zagato Gomes",
+    "conteudo": [
+      "Scrum", "Dinâmica Scrum (revisão de massinha)", "Comparação: gerenciamento tradicional vs Metodologia ágil",
+      "Revisão dos conceitos básicos", "Origem e valores do Manifesto Ágil", "Os 12 princípios do Manifesto Ágil",
+      "Principais autores, atividades e artefatos", "Metodologia XP (Extreme Programming)",
+      "Gamificação com Kahoot (Scrum e XP)"
+    ],
+    "projeto": null
+  },
+  {
+    "id": "prog-avancada",
+    "semestre": 4,
+    "titulo": "Técnicas Avançadas de Programação",
+    "descricao": "Padrões de projeto, programação concorrente e tópicos avançados em C#.",
+    "resumo": "A matéria de Estruturas de Dados é fundamental na ciência da computação, focando no estudo e implementação de formas eficientes de organizar e armazenar dados. Inclui o entendimento de estruturas como arrays, listas ligadas, pilhas, filas, árvores e grafos, cada uma adequada para diferentes tipos de operações e aplicações.",
+    "professor": "Wellington Luis Codinhoto Garcia",
+    "conteudo": [
+      "Introdução ao .NET", "Conceitos básicos de C#", "Laços e repetições em C#",
+      "Vetores e matrizes em C#", "CRUD com .NET", "Noções de Bootstrap"
+    ],
+    "projeto": {
+      "titulo": "Acesse",
+      "link": "#"
+    }
+  },
+  {
+    "id": "ia-corporativa",
+    "semestre": 4,
+    "titulo": "Inteligência Corporativa e Modelos de Negócios na Era Digital",
+    "descricao": "Business Intelligence, Data Warehousing e modelagem de negócios digitais.",
+    "resumo": "A matéria de Estruturas de Dados é fundamental na ciência da computação, focando no estudo e implementação de formas eficientes de organizar e armazenar dados. Inclui o entendimento de estruturas como arrays, listas ligadas, pilhas, filas, árvores e grafos, cada uma adequada para diferentes tipos de operações e aplicações.",
+    "professor": "Marinalva da Silva Tolpo Boldrin",
+    "conteudo": [
+      "Introdução à inovação", "As 6 etapas do processo de inovação", "Novos negócios apoiados por TI",
+      "Inteligência corporativa", "Benefícios", "Ciclo", "Exemplos", "Aplicação prática", "Negócios escaláveis e sustentáveis",
+      "Modelos de negócios tradicionais", "Aplicação e novos modelos na análise e elaboração de negócios competitivos",
+      "Alinhamento estratégico de TI", "Ativos intangíveis e capital intelectual", "Gestão do conhecimento"
+    ],
+    "projeto": null
+  },
+  {
+    "id": "projeto-integrador",
+    "semestre": 4,
+    "titulo": "Projeto Integrador",
+    "descricao": "Desenvolvimento de um projeto prático aplicando conhecimentos do semestre.",
+    "resumo": "Nesta matéria, trabalhamos em um projeto de extensão com o objetivo de prestar um serviço por meio de um sistema: o SIGEDESP (Sistema de Gerenciamento de Despesas da Prefeitura de Jales). O sistema foi desenvolvido para aprimorar o processo de controle financeiro, organizando o cadastro de despesas e facilitando o acompanhamento de orçamentos e pagamentos. Através de painéis de controle, é possível visualizar as informações de maneira clara e simples dos gastos e os setores que mais consomem recursos públicos, promovendo uma gestão mais eficiente e transparente. Além disso, estou trabalhando no GranjaTech, um sistema de monitoramento ambiental para granjas.",
+    "professor": "JEFFERSON ANTONIO RIBEIRO PASSERINI",
+    "conteudo": [
+      "Projeto integrador interdisciplinar",
+      "Curso git",
+      "GitHub"
+    ],
+    "projeto": {
+      "titulo": "Acesse os projetos",
+      "link": "#"
+    }
+  }
+]

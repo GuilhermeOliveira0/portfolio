@@ -1,0 +1,207 @@
+/* =======================================
+   DESIGN SYSTEM & CONFIGURAÇÕES GLOBAIS
+   ======================================= */
+:root {
+  --bg-main: #f4f6fb;
+  --nav-footer-bg: #1A233A;
+  --card-bg: #ffffff;
+  --border-color: #eef2f7;
+  --footer-text: #a7b4c2;
+  --text-primary: #1A233A;
+  --text-secondary: #555;
+  --text-light: #cfe8ea;
+  --accent1: #0ea5a4; /* Ciano/Verde Água */
+  --accent2: #7c3aed; /* Roxo */
+  --accent-hover: #ff9800; /* Laranja para hover e estado ativo */
+  --font-main: 'Poppins', 'Segoe UI', sans-serif;
+  --radius: 16px;
+  --shadow: 0 8px 30px rgba(0,0,0,0.07);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-main);
+  background: var(--bg-main);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+main { flex: 1; }
+
+@keyframes fadeIn { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
+.fade-in-section { animation: fadeIn 0.8s ease-out forwards; }
+
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #eef2f7; }
+::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+
+
+/* =======================================
+   CABEÇALHO & NAVEGAÇÃO
+   ======================================= */
+header {
+  background: var(--nav-footer-bg); padding: 14px 20px; position: sticky;
+  top: 0; z-index: 1000; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: background-color 0.4s ease;
+}
+.nav-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
+.brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+.logo { width: 44px; height: 44px; border-radius: 10px; background: linear-gradient(135deg, var(--accent1), var(--accent2)); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.1rem; color: #021025; }
+.brand-text-name { font-weight: 700; color: #fff; }
+.brand-text-sub { font-size: 12px; color: var(--text-light); }
+
+.desktop-nav a {
+  color: var(--text-light); text-decoration: none; margin-left: 20px; font-weight: 600;
+  font-size: 15px; padding: 8px 4px; position: relative; transition: color 0.3s ease;
+}
+.desktop-nav a::after {
+  content: ''; position: absolute; width: 100%; height: 2px; background: var(--accent-hover);
+  bottom: 0; left: 0; transform: scaleX(0); transform-origin: bottom right; transition: transform 0.3s ease-out;
+}
+.desktop-nav a:hover::after { transform: scaleX(1); transform-origin: bottom left; }
+.desktop-nav a:hover { color: var(--accent-hover); }
+.desktop-nav a.active { color: var(--accent-hover); font-weight: 700; }
+.desktop-nav a.active::after { transform: scaleX(1); transform-origin: bottom left; }
+
+@media (max-width: 768px) { .desktop-nav { display: none; } }
+
+/* =======================================
+   MENU HAMBÚRGUER (MOBILE)
+   ======================================= */
+.hamburger-menu { display: none; flex-direction: column; justify-content: space-around; width: 30px; height: 25px; background: transparent; border: none; cursor: pointer; padding: 0; }
+.hamburger-menu .bar { width: 30px; height: 3px; background-color: #fff; border-radius: 10px; transition: all 0.3s linear; }
+@media (max-width: 768px) { .hamburger-menu { display: flex; } }
+
+.mobile-nav { position: fixed; top: 0; right: -100%; width: 250px; height: 100vh; background: var(--nav-footer-bg); box-shadow: -5px 0 15px rgba(0,0,0,0.2); display: flex; flex-direction: column; padding-top: 60px; transition: right 0.4s ease-in-out, background-color 0.4s ease; }
+.mobile-nav.active { right: 0; }
+.mobile-nav a { color: #fff; padding: 20px; text-align: center; font-size: 1.2rem; text-decoration: none; border-bottom: 1px solid #2a344f; }
+.mobile-nav a:hover, .mobile-nav a.active { background: rgba(255, 152, 0, 0.1); color: var(--accent-hover); }
+
+/* =======================================
+   ESTILOS GERAIS DE PÁGINA E CARDS
+   ======================================= */
+.page-container { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
+.page-container h1 { text-align: center; font-size: 2.5rem; margin-bottom: 40px; }
+.grid-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+.card { background: var(--card-bg); border-radius: var(--radius); padding: 24px; box-shadow: var(--shadow); border: 1px solid var(--border-color); transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.4s ease; display: flex; flex-direction: column; }
+.card:hover { transform: translateY(-8px); box-shadow: 0 12px 35px rgba(0,0,0,0.1); }
+.card h3 { font-size: 1.3rem; margin-bottom: 8px; color: var(--text-primary); }
+.card p { font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6; flex: 1; }
+.card .tech-tags { margin-top: 16px; display: flex; flex-wrap: wrap; gap: 8px; }
+.card .tech-tags span { background: var(--bg-main); color: var(--text-secondary); font-size: 0.8rem; font-weight: 600; padding: 4px 10px; border-radius: 50px; }
+.card .card-link { display: inline-block; margin-top: 16px; color: var(--accent2); font-weight: 700; text-decoration: none; transition: color 0.3s ease; }
+.card .card-link:hover { text-decoration: underline; color: var(--accent1); }
+
+/* =======================================
+   RODAPÉ PADRÃO
+   ======================================= */
+footer { background: var(--nav-footer-bg); color: var(--footer-text); padding: 40px 20px; text-align: center; transition: background-color 0.4s ease; }
+.footer-content { max-width: 1200px; margin: 0 auto; }
+.footer-content h3 { color: #fff; font-size: 1.5rem; margin-bottom: 10px; }
+.footer-content p { margin-bottom: 20px; max-width: 500px; margin-left: auto; margin-right: auto; line-height: 1.7; }
+.footer-socials { display: flex; justify-content: center; gap: 15px; margin-bottom: 30px; }
+.footer-socials a { color: #fff; text-decoration: none; display: inline-block; transition: transform 0.3s ease, color 0.3s ease; }
+.footer-socials a:hover { transform: scale(1.1); color: var(--accent-hover); }
+.footer-socials svg { width: 28px; height: 28px; }
+.footer-bottom { border-top: 1px solid #2a344f; padding-top: 20px; font-size: 0.9rem; }
+
+
+/* =======================================
+   !!! REFINAMENTOS DO MODO ESCURO !!!
+   ======================================= */
+body.dark-mode {
+  --bg-main: #0f172a;
+  --nav-footer-bg: #020617;
+  --card-bg: #1e293b;
+  --text-primary: #e2e8f0;
+  --text-secondary: #94a3b8;
+  --border-color: #334155;
+  --shadow: 0 8px 30px rgba(0,0,0,0.2);
+
+  /* Scrollbar para o tema escuro */
+  ::-webkit-scrollbar-track { background: #1e293b; }
+  ::-webkit-scrollbar-thumb { background: #475569; }
+  ::-webkit-scrollbar-thumb:hover { background: #64748b; }
+}
+
+/* Unifica a cor de TODOS os cards e elementos similares no modo escuro */
+body.dark-mode .card,
+body.dark-mode .modal-content,
+body.dark-mode .intro, /* Card da pág. Sobre */
+body.dark-mode .profile-card, /* Card da pág. Sobre */
+body.dark-mode .contact-card, /* Card da pág. Contato */
+body.dark-mode .filter-btn {
+  background: var(--card-bg);
+  border-color: var(--border-color);
+}
+
+/* Melhora o contraste do botão secundário na pág. Sobre */
+body.dark-mode .btn.secondary {
+  border-color: var(--border-color);
+  color: var(--text-primary);
+}
+body.dark-mode .btn.secondary:hover {
+  background: rgba(255,255,255,0.05);
+}
+
+/* Melhora a aparência dos filtros na pág. Disciplinas */
+body.dark-mode .filter-btn {
+  color: var(--text-primary);
+}
+body.dark-mode .filter-btn:hover {
+  background: #334155;
+  border-color: #475569;
+}
+body.dark-mode .filter-btn.active {
+  background: var(--accent1);
+  color: var(--nav-footer-bg);
+  border-color: var(--accent1);
+  font-weight: 700;
+}
+
+/* Realça o efeito "blob" na pág. Sobre */
+body.dark-mode .blob {
+  opacity: 0.5;
+  mix-blend-mode: screen; /* Efeito de mistura de luz */
+}
+
+/* Melhora o card de projetos no modo escuro */
+body.dark-mode .card:hover {
+  border-color: var(--accent2);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+}
+
+/* =======================================
+   ESTILOS DE ACESSIBILIDADE
+   ======================================= */
+.nav-controls { display: flex; align-items: center; gap: 20px; }
+.accessibility-controls {
+  display: flex; align-items: center; gap: 8px;
+  border-left: 1px solid #2a344f; padding-left: 20px;
+}
+.accessibility-controls button {
+  background: transparent; border: 2px solid #475569; color: var(--text-light);
+  font-weight: 700; width: 32px; height: 32px; border-radius: 50%;
+  cursor: pointer; display: flex; align-items: center; justify-content: center;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+.accessibility-controls button:hover { background-color: #2a344f; border-color: var(--accent-hover); }
+#theme-toggle svg { width: 18px; height: 18px; }
+body.dark-mode .sun { display: block; }
+body.dark-mode .moon { display: none; }
+.sun { display: none; }
+.moon { display: block; }
+
+@media (max-width: 768px) {
+  .nav-controls { gap: 10px; }
+  .accessibility-controls {
+    position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%);
+    border: none; background: #2a344f; padding: 8px; border-radius: 50px;
+  }
+  .mobile-nav { padding-bottom: 100px; }
+}

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Disciplinas - Guilherme Henrique</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  
+  <style>
+    .filter-tabs { display: flex; justify-content: center; gap: 10px; margin-bottom: 40px; flex-wrap: wrap; }
+    .filter-btn { padding: 10px 20px; font-family: var(--font-main); font-size: 1rem; font-weight: 600; border: 2px solid #ddd; background: #fff; color: var(--text-secondary); border-radius: 50px; cursor: pointer; transition: all 0.3s ease; }
+    .filter-btn:hover { background: #eef2f7; border-color: #ccc; }
+    .filter-btn.active { background: var(--nav-footer-bg); color: #fff; border-color: var(--nav-footer-bg); }
+    .disciplinas-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; min-height: 100px; }
+    .disciplina-card { cursor: pointer; }
+    .status-message { text-align: center; color: var(--text-secondary); font-weight: 500; padding: 20px; }
+    
+    .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(11, 20, 48, 0.7); display: flex; align-items: center; justify-content: center; opacity: 0; visibility: hidden; transition: opacity 0.3s ease, visibility 0.3s ease; z-index: 1000; }
+    .modal-overlay.active { opacity: 1; visibility: visible; }
+    .modal-content { background: #fff; padding: 30px; border-radius: 16px; max-width: 600px; width: 90%; max-height: 80vh; overflow-y: auto; position: relative; transform: scale(0.9); transition: transform 0.3s ease; }
+    .modal-overlay.active .modal-content { transform: scale(1); }
+    .modal-close { position: absolute; top: 15px; right: 15px; background: #f0f0f0; border: none; border-radius: 50%; width: 30px; height: 30px; font-size: 1.2rem; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+    .modal-content h2 { font-size: 1.8rem; margin-bottom: 15px; }
+    #modal-resumo { font-size: 1rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 20px; border-left: 3px solid var(--accent1); padding-left: 15px; }
+    
+    .modal-content .professor { font-weight: 500; color: var(--text-secondary); margin-bottom: 20px; }
+    .modal-content .professor span { font-weight: 700; color: var(--text-primary); }
+    .modal-content h4 { font-size: 1.1rem; margin-top: 20px; margin-bottom: 10px; }
+    .modal-content ul { list-style-position: inside; padding-left: 0; }
+    .modal-content li { margin-bottom: 8px; color: var(--text-secondary); }
+    .project-link { display: none; margin-top: 10px; background: #2F3C9E; color: #fff; padding: 10px 18px; text-decoration: none; border-radius: 8px; font-weight: 600; }
+  </style>
+</head>
+<body>
+
+  <div id="navbar-placeholder"></div>
+
+  <main class="page-container fade-in-section">
+    <h1>Grade Curricular</h1>
+
+    <div class="filter-tabs">
+      <button class="filter-btn active" data-semestre="todos">Todos</button>
+      <button class="filter-btn" data-semestre="4">4º Semestre</button>
+      <button class="filter-btn" data-semestre="5">5º Semestre</button>
+    </div>
+    
+    <div class="disciplinas-grid grid-container" id="disciplinas-grid">
+      <p class="status-message">Carregando disciplinas...</p>
+    </div>
+  </main>
+
+  <div class="modal-overlay" id="disciplina-modal">
+    <div class="modal-content">
+      <button class="modal-close" aria-label="Fechar">&times;</button>
+      <h2 id="modal-title"></h2>
+      
+      <p id="modal-resumo"></p>
+
+      <p class="professor">Professor: <span id="modal-professor"></span></p>
+      
+      <h4>Conteúdo Trabalhado</h4>
+      <ul id="modal-conteudo"></ul>
+      
+      <div id="modal-projeto-container">
+        <h4>Projeto Relacionado</h4>
+        <p id="modal-projeto-titulo"></p>
+        <a href="#" class="project-link" id="modal-projeto-link" target="_blank" rel="noopener noreferrer">Ver no GitHub</a>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-content">
+        <div class="footer-bottom">
+            <p>© <span id="year"></span> Guilherme Henrique. Todos os direitos reservados.</p>
+        </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const disciplinasGrid = document.getElementById('disciplinas-grid');
+        const modal = document.getElementById('disciplina-modal');
+        const modalTitle = document.getElementById('modal-title');
+        const modalResumo = document.getElementById('modal-resumo');
+        const modalProfessor = document.getElementById('modal-professor');
+        const modalConteudo = document.getElementById('modal-conteudo');
+        const modalProjetoContainer = document.getElementById('modal-projeto-container');
+        const modalProjetoTitulo = document.getElementById('modal-projeto-titulo');
+        const modalProjetoLink = document.getElementById('modal-projeto-link');
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        let allDisciplinas = [];
+
+        function renderGrid(disciplinas) {
+            disciplinasGrid.innerHTML = '';
+            if (disciplinas.length === 0) {
+                disciplinasGrid.innerHTML = `<p class="status-message">Nenhuma disciplina encontrada para este semestre.</p>`;
+                return;
+            }
+            disciplinas.forEach(disciplina => {
+                const card = document.createElement('div');
+                card.className = 'disciplina-card card';
+                card.dataset.id = disciplina.id;
+                card.innerHTML = `
+                    <h3>${disciplina.titulo}</h3>
+                    <p>${disciplina.descricao}</p>
+                `;
+                disciplinasGrid.appendChild(card);
+            });
+        }
+
+        // FUNÇÃO showModal CORRIGIDA
+        function showModal(disciplina) {
+            modalTitle.textContent = disciplina.titulo;
+            modalProfessor.textContent = disciplina.professor;
+            
+            if (disciplina.resumo) {
+                modalResumo.textContent = disciplina.resumo;
+                modalResumo.style.display = 'block';
+            } else {
+                modalResumo.style.display = 'none';
+            }
+
+            modalConteudo.innerHTML = '';
+            disciplina.conteudo.forEach(item => {
+                const li = document.createElement('li');
+                li.textContent = item;
+                modalConteudo.appendChild(li);
+            });
+
+            // LÓGICA DO PROJETO CORRIGIDA
+            if (disciplina.projeto && disciplina.projeto.link) {
+                modalProjetoContainer.style.display = 'block'; // Mostra a seção inteira
+                modalProjetoTitulo.textContent = disciplina.projeto.titulo; // Define o texto do parágrafo
+                modalProjetoLink.href = disciplina.projeto.link; // Define o link do botão
+                modalProjetoLink.style.display = 'inline-block'; // Mostra o botão
+            } else {
+                modalProjetoContainer.style.display = 'none'; // Esconde a seção inteira
+            }
+            
+            modal.classList.add('active');
+        }
+
+        function hideModal() {
+            modal.classList.remove('active');
+        }
+
+        fetch('disciplinas.json')
+            .then(response => {
+                if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                return response.json();
+            })
+            .then(data => {
+                allDisciplinas = data;
+                renderGrid(allDisciplinas);
+            })
+            .catch(error => {
+                console.error('Erro ao carregar disciplinas.json:', error);
+                disciplinasGrid.innerHTML = `<p class="status-message"><b>Erro ao carregar as disciplinas.</b><br>Verifique o arquivo 'disciplinas.json'.</p>`;
+            });
+        
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const semestre = btn.dataset.semestre;
+                const filtered = semestre === 'todos' ? allDisciplinas : allDisciplinas.filter(d => d.semestre == semestre);
+                renderGrid(filtered);
+            });
+        });
+
+        disciplinasGrid.addEventListener('click', (event) => {
+            const card = event.target.closest('.disciplina-card');
+            if (card) {
+                const disciplinaId = card.dataset.id;
+                const disciplinaData = allDisciplinas.find(d => d.id === disciplinaId);
+                if (disciplinaData) showModal(disciplinaData);
+            }
+        });
+
+        modal.querySelector('.modal-close').addEventListener('click', hideModal);
+        modal.addEventListener('click', (event) => {
+            if (event.target === modal) hideModal();
+        });
+
+        document.getElementById('year').textContent = new Date().getFullYear();
+    });
+  </script>
+<div vw class="enabled">
+  <div vw-access-button class="active"></div>
+  <div vw-plugin-wrapper>
+    <div class="vw-plugin-top-wrapper"></div>
+  </div>
+</div>
+<script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+<script>
+  new window.VLibras.Widget('https://vlibras.gov.br/app');
+</script>
+</body>
+</html>
