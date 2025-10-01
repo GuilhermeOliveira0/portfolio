@@ -72,16 +72,64 @@ document.addEventListener("DOMContentLoaded", function() {
       // --- LÓGICA DO MENU HAMBÚRGUER ---
       const hamburger = document.querySelector('.hamburger-menu');
       const mobileNav = document.querySelector('.mobile-nav');
+      const mobileNavOverlay = document.querySelector('.mobile-nav-overlay');
       
       if (hamburger && mobileNav) {
         const accessibilityControls = document.querySelector('.accessibility-controls');
         if (window.innerWidth <= 768 && accessibilityControls) {
             mobileNav.appendChild(accessibilityControls);
         }
-        hamburger.addEventListener('click', () => {
+        
+        const toggleMenu = () => {
+          hamburger.classList.toggle('active');
           mobileNav.classList.toggle('active');
+          if (mobileNavOverlay) mobileNavOverlay.classList.toggle('active');
+          document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+        };
+
+        const closeMenu = () => {
+          hamburger.classList.remove('active');
+          mobileNav.classList.remove('active');
+          if (mobileNavOverlay) mobileNavOverlay.classList.remove('active');
+          document.body.style.overflow = '';
+        };
+
+        hamburger.addEventListener('click', toggleMenu);
+
+        // Fechar menu ao clicar no overlay
+        if (mobileNavOverlay) {
+          mobileNavOverlay.addEventListener('click', closeMenu);
+        }
+
+        // Fechar menu ao clicar em um link
+        const mobileLinks = document.querySelectorAll('.mobile-nav a');
+        mobileLinks.forEach(link => {
+          link.addEventListener('click', closeMenu);
+        });
+
+        // Fechar menu com tecla ESC
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape' && mobileNav.classList.contains('active')) {
+            closeMenu();
+          }
         });
       }
+
+      // --- EFEITO DE SCROLL NA NAVBAR ---
+      const header = document.querySelector('header');
+      let lastScroll = 0;
+      
+      window.addEventListener('scroll', () => {
+        const currentScroll = window.pageYOffset;
+        
+        if (currentScroll > 100) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+        
+        lastScroll = currentScroll;
+      });
 
       // --- LÓGICA DE MARCAR O LINK DA PÁGINA ATIVA ---
       const currentPage = window.location.pathname.split('/').pop() || 'index.html'; // Garante que a home seja marcada
