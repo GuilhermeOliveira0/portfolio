@@ -131,8 +131,41 @@ document.addEventListener("DOMContentLoaded", function() {
         lastScroll = currentScroll;
       });
 
+      // --- ANIMAÇÕES DE SCROLL (Intersection Observer) ---
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('fade-in-section');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      // Observa elementos que devem animar ao entrar na tela
+      const animatedElements = document.querySelectorAll('.card, .intro, .profile-card, .skill, .timeline-item');
+      animatedElements.forEach(el => observer.observe(el));
+
+      // --- LAZY LOADING DE IMAGENS ---
+      const images = document.querySelectorAll('img[data-src]');
+      const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const img = entry.target;
+            img.src = img.dataset.src;
+            img.removeAttribute('data-src');
+            imageObserver.unobserve(img);
+          }
+        });
+      });
+      images.forEach(img => imageObserver.observe(img));
+
       // --- LÓGICA DE MARCAR O LINK DA PÁGINA ATIVA ---
-      const currentPage = window.location.pathname.split('/').pop() || 'index.html'; // Garante que a home seja marcada
+      const currentPage = window.location.pathname.split('/').pop() || 'index.html';
       const navLinks = document.querySelectorAll('.desktop-nav a, .mobile-nav a');
       
       navLinks.forEach(link => {

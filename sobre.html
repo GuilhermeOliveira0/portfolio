@@ -33,7 +33,7 @@
       left: 0;
       width: 100%;
       height: 4px;
-      background: linear-gradient(90deg, #06b6d4, #8b5cf6);
+      background: linear-gradient(90deg, #0ea5e9, #3b82f6);
     }
     .intro .pre { 
       font-size: 0.9rem; 
@@ -49,7 +49,7 @@
       margin: 10px 0 24px 0; 
       font-weight: 800; 
       letter-spacing: -2px;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      background: linear-gradient(135deg, #0ea5e9 0%, #2563eb 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -70,12 +70,12 @@
       border-radius: 999px; 
       border: 0; 
       font-weight: 700;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      background: linear-gradient(135deg, #0ea5e9 0%, #2563eb 100%);
       color: #fff; 
       text-decoration: none;
       cursor: pointer; 
       font-size: 1rem; 
-      box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+      box-shadow: 0 8px 25px rgba(14, 165, 233, 0.4);
       transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
       position: relative;
       overflow: hidden;
@@ -95,7 +95,7 @@
     }
     .btn:hover { 
       transform: translateY(-4px) scale(1.02); 
-      box-shadow: 0 12px 30px rgba(102, 126, 234, 0.5);
+      box-shadow: 0 12px 30px rgba(14, 165, 233, 0.5);
     }
     .btn.secondary { 
       background: transparent; 
@@ -105,8 +105,8 @@
     }
     .btn.secondary:hover {
       border-color: var(--accent2);
-      background: rgba(139, 92, 246, 0.05);
-      box-shadow: 0 8px 20px rgba(139, 92, 246, 0.2);
+      background: rgba(59, 130, 246, 0.05);
+      box-shadow: 0 8px 20px rgba(59, 130, 246, 0.2);
     }
     
     .profile-card {
@@ -130,7 +130,7 @@
       width: 450px; 
       height: 350px; 
       border-radius: 50%;
-      background: radial-gradient(closest-side, rgba(139, 92, 246, 0.4), rgba(6, 182, 212, 0.25));
+      background: radial-gradient(closest-side, rgba(59, 130, 246, 0.4), rgba(6, 182, 212, 0.25));
       filter: blur(60px); 
       z-index: 0;
       animation: blobFloat 8s ease-in-out infinite;
@@ -192,42 +192,45 @@
     /* =================================================== */
     
     .grid-2 { display: grid; grid-template-columns: 1fr 360px; gap: 24px; margin-top: 26px; }
-    .skill { margin-bottom: 20px; }
-    .skill .label { 
-      font-weight: 600; 
-      margin-bottom: 10px; 
-      font-size: 0.95rem;
+    
+    /* Estilos para Categorias de Habilidades */
+    .skills-category {
+      margin-bottom: 24px;
+    }
+    
+    .skills-category h4 {
+      font-size: 1rem;
+      font-weight: 700;
       color: var(--text-primary);
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #0ea5e9;
+      display: inline-block;
     }
-    .skill .bar { 
-      height: 12px; 
-      background: var(--border-color); 
-      border-radius: 999px; 
-      overflow: hidden;
-      position: relative;
+    
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
     }
-    .skill .bar > i { 
-      display: block; 
-      height: 100%; 
-      border-radius: 999px; 
-      background: linear-gradient(90deg, #06b6d4, #8b5cf6);
-      box-shadow: 0 2px 8px rgba(139, 92, 246, 0.3);
-      transition: width 1s ease-out;
-      position: relative;
+    
+    .skill-tag {
+      background: linear-gradient(135deg, rgba(14, 165, 233, 0.1), rgba(59, 130, 246, 0.1));
+      color: #0ea5e9;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      border: 1px solid rgba(14, 165, 233, 0.3);
+      transition: all 0.3s ease;
+      display: inline-block;
     }
-    .skill .bar > i::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 30%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3));
-      animation: shimmer 2s infinite;
-    }
-    @keyframes shimmer {
-      0%, 100% { transform: translateX(-100%); }
-      50% { transform: translateX(100%); }
+    
+    .skill-tag:hover {
+      background: linear-gradient(135deg, #0ea5e9, #3b82f6);
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(14, 165, 233, 0.3);
     }
     
     .education-logos {
@@ -261,13 +264,13 @@
           </p>
           <div class="cta-row">
             <a class="btn" href="projetos.html">Meus Projetos</a>
-            <a class="btn secondary" href="disciplinas.html">Grade Curricular</a>
+            <a class="btn secondary" href="grade.html">Grade Curricular</a>
           </div>
         </div>
 
         <aside class="profile-card" aria-label="Foto e resumo">
           <div class="blob" aria-hidden="true"></div>
-          <div class="avatar" style="background-image:url('img/sua-foto.jpg');"></div>
+          <div class="avatar" style="background-image:url('img/perfil.jpg');"></div>
           <div class="profile-name">Guilherme Henrique</div>
           <div class="profile-sub">Estudante • Desenvolvedor • Foco em C# e Banco de Dados</div>
           
@@ -289,30 +292,50 @@
           <p><strong>Etec Jales</strong> — Técnico em Desenvolvimento de Sistemas (Concluído).</p>
           <div class="education-logos">
             <a href="https://www.fatecjales.edu.br/" target="_blank" rel="noopener noreferrer" title="Site da FATEC Jales">
-              <img src="img/fatec-logo.png" alt="Logo da FATEC">
+              <img src="img/fatec-logo.png" alt="Logo da FATEC Jales - Faculdade de Tecnologia">
             </a>
             <a href="https://etecjales.cps.sp.gov.br/" target="_blank" rel="noopener noreferrer" title="Site da Etec Jales">
-              <img src="img/etec-logo.png" alt="Logo da Etec">
+              <img src="img/etec-logo.png" alt="Logo da Etec Jales - Escola Técnica Estadual">
             </a>
           </div>
         </div>
         <aside class="card" id="skills">
           <h3>Principais Habilidades</h3>
-          <div class="skill">
-            <div class="label">C# & .NET</div>
-            <div class="bar"><i style="width:85%"></i></div>
+          
+          <div class="skills-category">
+            <h4>Backend</h4>
+            <div class="skills-list">
+              <span class="skill-tag">C# & .NET</span>
+              <span class="skill-tag">API REST</span>
+              <span class="skill-tag">Entity Framework</span>
+            </div>
           </div>
-          <div class="skill">
-            <div class="label">SQL & Bancos de Dados</div>
-            <div class="bar"><i style="width:80%"></i></div>
+          
+          <div class="skills-category">
+            <h4>Frontend</h4>
+            <div class="skills-list">
+              <span class="skill-tag">HTML5</span>
+              <span class="skill-tag">CSS3</span>
+              <span class="skill-tag">JavaScript</span>
+            </div>
           </div>
-          <div class="skill">
-            <div class="label">HTML, CSS & JavaScript</div>
-            <div class="bar"><i style="width:75%"></i></div>
+          
+          <div class="skills-category">
+            <h4>Banco de Dados</h4>
+            <div class="skills-list">
+              <span class="skill-tag">SQL Server</span>
+              <span class="skill-tag">PostgreSQL</span>
+              <span class="skill-tag">MySQL</span>
+            </div>
           </div>
-          <div class="skill">
-            <div class="label">Quality Assurance (QA)</div>
-            <div class="bar"><i style="width:70%"></i></div>
+          
+          <div class="skills-category">
+            <h4>Ferramentas e Outros</h4>
+            <div class="skills-list">
+              <span class="skill-tag">Git & GitHub</span>
+              <span class="skill-tag">Quality Assurance (QA)</span>
+              <span class="skill-tag">VS Code</span>
+            </div>
           </div>
         </aside>
       </div>

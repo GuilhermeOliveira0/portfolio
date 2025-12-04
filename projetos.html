@@ -10,13 +10,369 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;800&display=swap" rel="stylesheet">
   
   <link rel="stylesheet" href="style.css">
+  
+  <style>
+    .projects-hero {
+      text-align: center;
+      margin-bottom: 60px;
+      animation: fadeInDown 0.6s ease-out;
+    }
+    
+    .projects-hero h1 {
+      font-size: clamp(2.5rem, 5vw, 3.5rem);
+      font-weight: 800;
+      background: linear-gradient(135deg, #0ea5e9 0%, #2563eb 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 16px;
+      letter-spacing: -2px;
+    }
+    
+    .projects-hero p {
+      font-size: 1.2rem;
+      color: var(--text-secondary);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+    
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      padding: 35px;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border-color);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+      animation: fadeInUp 0.6s ease-out both;
+    }
+    
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, #0ea5e9, #2563eb);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s ease;
+    }
+    
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-hover);
+      border-color: #0ea5e9;
+    }
+    
+    .card:hover::before {
+      transform: scaleX(1);
+    }
+    
+    .card h3 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 16px;
+      transition: color 0.3s ease;
+    }
+    
+    .card:hover h3 {
+      color: #0ea5e9;
+    }
+    
+    .card p {
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 24px;
+      font-size: 1rem;
+    }
+    
+    .tech-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+    
+    .tech-tags span {
+      background: linear-gradient(135deg, rgba(14, 165, 233, 0.1), rgba(37, 99, 235, 0.1));
+      color: #0ea5e9;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      border: 1px solid rgba(14, 165, 233, 0.2);
+      transition: all 0.3s ease;
+    }
+    
+    .tech-tags span:hover {
+      background: linear-gradient(135deg, #0ea5e9, #2563eb);
+      color: white;
+      transform: translateY(-2px);
+    }
+    
+    /* Botões de Ação dos Projetos */
+    .project-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+    
+    .project-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      border: 2px solid;
+      cursor: pointer;
+    }
+    
+    .btn-github {
+      background: #24292e;
+      color: white;
+      border-color: #24292e;
+    }
+    
+    .btn-github:hover {
+      background: #1a1e22;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(36, 41, 46, 0.4);
+    }
+    
+    .btn-demo {
+      background: linear-gradient(135deg, #0ea5e9, #2563eb);
+      color: white;
+      border-color: #0ea5e9;
+    }
+    
+    .btn-demo:hover {
+      background: linear-gradient(135deg, #0284c7, #1d4ed8);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(14, 165, 233, 0.4);
+    }
+    
+    .btn-details {
+      background: transparent;
+      color: #0ea5e9;
+      border-color: #0ea5e9;
+    }
+    
+    .btn-details:hover {
+      background: rgba(14, 165, 233, 0.1);
+      transform: translateY(-2px);
+    }
+    
+    .project-btn svg {
+      width: 18px;
+      height: 18px;
+    }
+    
+    /* Modal de Detalhes */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(5px);
+      animation: fadeIn 0.3s ease;
+    }
+    
+    .modal.active {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .modal-content {
+      background: var(--card-bg);
+      border-radius: 20px;
+      padding: 40px;
+      max-width: 700px;
+      width: 90%;
+      max-height: 90vh;
+      overflow-y: auto;
+      position: relative;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      animation: slideUp 0.3s ease;
+    }
+    
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .modal-close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: transparent;
+      border: none;
+      font-size: 2rem;
+      color: var(--text-secondary);
+      cursor: pointer;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      transition: all 0.3s ease;
+    }
+    
+    .modal-close:hover {
+      background: rgba(0, 0, 0, 0.1);
+      color: var(--text-primary);
+      transform: rotate(90deg);
+    }
+    
+    .modal-content h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: var(--text-primary);
+    }
+    
+    .modal-content .tech-tags {
+      margin: 20px 0;
+    }
+    
+    .modal-description {
+      color: var(--text-secondary);
+      line-height: 1.8;
+      font-size: 1.05rem;
+      margin-bottom: 20px;
+    }
+    
+    .modal-features {
+      margin: 20px 0;
+    }
+    
+    .modal-features h3 {
+      font-size: 1.2rem;
+      margin-bottom: 12px;
+      color: var(--text-primary);
+    }
+    
+    .modal-features ul {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .modal-features li {
+      padding: 8px 0;
+      padding-left: 24px;
+      position: relative;
+      color: var(--text-secondary);
+    }
+    
+    .modal-features li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: #0ea5e9;
+      font-weight: bold;
+    }
+    
+    .card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #0ea5e9;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    
+    .card-link:hover {
+      gap: 12px;
+      color: #2563eb;
+    }
+    
+    .card:nth-child(1) { animation-delay: 0.1s; }
+    .card:nth-child(2) { animation-delay: 0.2s; }
+    .card:nth-child(3) { animation-delay: 0.3s; }
+    .card:nth-child(4) { animation-delay: 0.4s; }
+    
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .grid-container {
+        grid-template-columns: 1fr;
+      }
+      
+      .project-actions {
+        flex-direction: column;
+      }
+      
+      .project-btn {
+        width: 100%;
+        justify-content: center;
+      }
+      
+      .modal-content {
+        padding: 30px 20px;
+      }
+      
+      .projects-hero h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
 </head>
 <body>
 
   <div id="navbar-placeholder"></div>
 
   <main class="page-container fade-in-section">
-    <h1>Meus Projetos</h1>
+    <div class="projects-hero">
+      <h1>Meus Projetos</h1>
+      <p>Confira alguns dos projetos que desenvolvi durante minha jornada acadêmica e profissional</p>
+    </div>
     
     <div class="grid-container">
       
@@ -29,7 +385,20 @@
           <span>PostgreSQL</span>
           <span>API REST</span>
         </div>
-        <a href="https://github.com/GuilhermeOliveira0/" class="card-link" target="_blank" rel="noopener noreferrer">Ver no GitHub &rarr;</a>
+        <div class="project-actions">
+          <a href="https://github.com/GuilhermeOliveira0/" class="project-btn btn-github" target="_blank" rel="noopener noreferrer">
+            <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            Repositório
+          </a>
+          <a href="#" class="project-btn btn-demo" target="_blank" rel="noopener noreferrer">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+            Demo ao Vivo
+          </a>
+          <button class="project-btn btn-details" onclick="openModal('modal1')">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            Ver Detalhes
+          </button>
+        </div>
       </div>
 
       <div class="card">
@@ -39,6 +408,138 @@
           <span>Java</span>
           <span>PrimeFaces</span>
           <span>SQL Server</span>
+        </div>
+        <div class="project-actions">
+          <a href="https://github.com/GuilhermeOliveira0/" class="project-btn btn-github" target="_blank" rel="noopener noreferrer">
+            <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            Repositório
+          </a>
+          <a href="#" class="project-btn btn-demo" target="_blank" rel="noopener noreferrer">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+            Demo ao Vivo
+          </a>
+          <button class="project-btn btn-details" onclick="openModal('modal2')">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            Ver Detalhes
+          </button>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Este Portfólio</h3>
+        <p>Projeto pessoal para apresentar minhas habilidades, utilizando HTML semântico, CSS moderno e JavaScript para interatividade e carregamento de dados.</p>
+        <div class="tech-tags">
+          <span>HTML5</span>
+          <span>CSS3</span>
+          <span>JavaScript</span>
+          <span>JSON</span>
+        </div>
+        <div class="project-actions">
+          <a href="https://github.com/GuilhermeOliveira0/portfolio" class="project-btn btn-github" target="_blank" rel="noopener noreferrer">
+            <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            Repositório
+          </a>
+          <a href="#" class="project-btn btn-demo">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+            Demo ao Vivo
+          </a>
+          <button class="project-btn btn-details" onclick="openModal('modal3')">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            Ver Detalhes
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Modais de Detalhes -->
+    <div id="modal1" class="modal">
+      <div class="modal-content">
+        <button class="modal-close" onclick="closeModal('modal1')">&times;</button>
+        <h2>API de Vendas</h2>
+        <div class="tech-tags">
+          <span>C#</span>
+          <span>.NET</span>
+          <span>PostgreSQL</span>
+          <span>API REST</span>
+          <span>Entity Framework</span>
+        </div>
+        <div class="modal-description">
+          <p>Sistema completo de gerenciamento de vendas desenvolvido com arquitetura RESTful, implementando as melhores práticas de desenvolvimento back-end.</p>
+        </div>
+        <div class="modal-features">
+          <h3>Funcionalidades Principais:</h3>
+          <ul>
+            <li>CRUD completo de produtos, clientes e pedidos</li>
+            <li>Autenticação e autorização com JWT</li>
+            <li>Validação de dados com FluentValidation</li>
+            <li>Documentação automática com Swagger</li>
+            <li>Integração com banco de dados PostgreSQL</li>
+            <li>Testes unitários e de integração</li>
+            <li>Arquitetura em camadas (Repository Pattern)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div id="modal2" class="modal">
+      <div class="modal-content">
+        <button class="modal-close" onclick="closeModal('modal2')">&times;</button>
+        <h2>Sistema Escolar</h2>
+        <div class="tech-tags">
+          <span>Java</span>
+          <span>PrimeFaces</span>
+          <span>SQL Server</span>
+          <span>JSF</span>
+        </div>
+        <div class="modal-description">
+          <p>Aplicação desktop robusta para gestão completa de instituições de ensino, com foco em usabilidade e regras de negócio complexas.</p>
+        </div>
+        <div class="modal-features">
+          <h3>Funcionalidades Principais:</h3>
+          <ul>
+            <li>Gestão de alunos, professores e turmas</li>
+            <li>Controle de notas e frequência</li>
+            <li>Sistema de matrículas automatizado</li>
+            <li>Relatórios e estatísticas</li>
+            <li>Interface intuitiva com PrimeFaces</li>
+            <li>Validações de dados robustas</li>
+            <li>Histórico acadêmico completo</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div id="modal3" class="modal">
+      <div class="modal-content">
+        <button class="modal-close" onclick="closeModal('modal3')">&times;</button>
+        <h2>Portfólio Profissional</h2>
+        <div class="tech-tags">
+          <span>HTML5</span>
+          <span>CSS3</span>
+          <span>JavaScript</span>
+          <span>JSON</span>
+          <span>Responsive Design</span>
+        </div>
+        <div class="modal-description">
+          <p>Website profissional desenvolvido do zero, demonstrando habilidades em desenvolvimento front-end e design responsivo.</p>
+        </div>
+        <div class="modal-features">
+          <h3>Funcionalidades Principais:</h3>
+          <ul>
+            <li>Design responsivo e mobile-first</li>
+            <li>Modo escuro/claro com persistência</li>
+            <li>Animações CSS e JavaScript</li>
+            <li>Carregamento dinâmico de dados (JSON)</li>
+            <li>Controles de acessibilidade</li>
+            <li>SEO otimizado</li>
+            <li>Performance otimizada</li>
+            <li>Integração com VLibras</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </main>
         </div>
         <a href="https://github.com/GuilhermeOliveira0/" class="card-link" target="_blank" rel="noopener noreferrer">Ver no GitHub &rarr;</a>
       </div>
@@ -81,6 +582,41 @@
   <script>
     // Atualiza o ano no rodapé
     document.getElementById('year').textContent = new Date().getFullYear();
+    
+    // Funções do Modal
+    function openModal(modalId) {
+      const modal = document.getElementById(modalId);
+      if (modal) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+    }
+    
+    function closeModal(modalId) {
+      const modal = document.getElementById(modalId);
+      if (modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+    
+    // Fechar modal ao clicar fora do conteúdo
+    document.querySelectorAll('.modal').forEach(modal => {
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+          closeModal(modal.id);
+        }
+      });
+    });
+    
+    // Fechar modal com tecla ESC
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        document.querySelectorAll('.modal.active').forEach(modal => {
+          closeModal(modal.id);
+        });
+      }
+    });
   </script>
 
 </body>
