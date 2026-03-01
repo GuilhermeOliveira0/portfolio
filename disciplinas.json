@@ -202,5 +202,224 @@
       "titulo": "Acesse os projetos",
       "link": "#"
     }
+  },
+  {
+    "id": "bi-bigdata",
+    "semestre": 5,
+    "titulo": "Business Intelligence e Big Data",
+    "descricao": "Coleta, processamento e análise de grandes volumes de dados para suporte à tomada de decisão estratégica e geração de insights para negócios.",
+    "icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M21 12V7H5a2 2 0 0 1 0-4h14v4'/><path d='M3 5v14a2 2 0 0 0 2 2h16v-5'/><path d='M18 12a2 2 0 0 0 0 4h4v-4z'/></svg>",
+    "iconBg": "linear-gradient(135deg, #0284c7 0%, #0e4a6e 100%)",
+    "resumo": "A disciplina de Business Intelligence e Big Data aborda técnicas e ferramentas para a coleta, armazenamento, processamento e análise de grandes volumes de dados. Estuda-se a construção de Data Warehouses, processos ETL, modelagem dimensional e criação de dashboards interativos, com foco na aplicação prática para transformar dados brutos em informações estratégicas que apoiam a tomada de decisão nas organizações.",
+    "professor": "Alexandre Aparecido Bernardes",
+    "conteudo": [
+      "Conceitos de Business Intelligence e Data Warehousing",
+      "Processos ETL (Extração, Transformação e Carga)",
+      "Modelagem dimensional (Star Schema e Snowflake)",
+      "Ferramentas de visualização de dados e dashboards",
+      "Introdução ao Big Data e ecossistema Hadoop/Spark"
+    ],
+    "projeto": null
+  },
+  {
+    "id": "estatistica-aplicada",
+    "semestre": 5,
+    "titulo": "Estatística Aplicada",
+    "descricao": "Aplicação de conceitos estatísticos na análise de dados, probabilidade e métodos quantitativos para a resolução de problemas em tecnologia.",
+    "icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><line x1='18' y1='20' x2='18' y2='10'/><line x1='12' y1='20' x2='12' y2='4'/><line x1='6' y1='20' x2='6' y2='14'/><line x1='2' y1='20' x2='22' y2='20'/></svg>",
+    "iconBg": "linear-gradient(135deg, #059669 0%, #065f46 100%)",
+    "resumo": "Estatística Aplicada fornece as ferramentas quantitativas essenciais para a análise e interpretação de dados no contexto tecnológico. A disciplina abrange desde conceitos fundamentais de estatística descritiva até inferência estatística, probabilidade, distribuições, testes de hipóteses e regressão, preparando o aluno para aplicar métodos estatísticos sólidos na resolução de problemas reais e na análise de dados.",
+    "professor": "Andrea Piranhe da Silva",
+    "conteudo": [
+      "Estatística descritiva: medidas de tendência central e dispersão",
+      "Probabilidade e distribuições de probabilidade",
+      "Distribuição Normal e Teorema Central do Limite",
+      "Testes de hipóteses e intervalos de confiança",
+      "Correlação e Regressão Linear"
+    ],
+    "projeto": null
+  },
+  {
+    "id": "projeto-integrador-ii",
+    "semestre": 5,
+    "titulo": "Projeto Integrador II",
+    "descricao": "Desenvolvimento prático do sistema Civitas, um projeto de software em equipa voltado para a gestão da Prefeitura de Jales, aplicando e integrando as tecnologias estudadas durante o semestre.",
+    "icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M2 20h20'/><path d='M5 20V8l7-5 7 5v12'/><path d='M9 20v-6h6v6'/><line x1='12' y1='8' x2='12' y2='12'/><line x1='10' y1='10' x2='14' y2='10'/></svg>",
+    "iconBg": "linear-gradient(135deg, #16a34a 0%, #15803d 100%)",
+    "resumo": "O Projeto Integrador II é uma disciplina prática e colaborativa onde se desenvolve o sistema Civitas — uma plataforma de software voltada para a gestão administrativa da Prefeitura de Jales. O projeto integra as tecnologias e metodologias estudadas ao longo do semestre, como DevOps, design patterns e programação multiplataforma, simulando um ambiente real de desenvolvimento em equipa.",
+    "professor": "Jefferson Antonio Ribeiro Passerini",
+    "conteudo": [
+      "Levantamento de requisitos e modelagem do sistema Civitas",
+      "Desenvolvimento backend e frontend integrado",
+      "Versionamento e colaboração com Git/GitHub",
+      "Testes, integração contínua e deploy",
+      "Apresentação e documentação do projeto final"
+    ],
+    "projeto": {
+      "titulo": "Sistema Civitas - Gestão para a Prefeitura de Jales",
+      "link": "#"
+    }
+  },
+  {
+    "id": "sistemas-distribuidos-iot",
+    "semestre": 5,
+    "titulo": "Sistemas Distribuídos Aplicado à Internet das Coisas",
+    "descricao": "Estudo de arquiteturas de sistemas distribuídos e protocolos de comunicação entre dispositivos no contexto de IoT (Internet of Things).",
+    "icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='2'/><path d='M16.24 7.76a6 6 0 0 1 0 8.49'/><path d='M7.76 16.24a6 6 0 0 1 0-8.49'/><path d='M19.07 4.93a10 10 0 0 1 0 14.14'/><path d='M4.93 19.07a10 10 0 0 1 0-14.14'/></svg>",
+    "iconBg": "linear-gradient(135deg, #0891b2 0%, #155e75 100%)",
+    "resumo": "A disciplina explora os fundamentos de sistemas distribuídos aplicados ao universo da Internet das Coisas (IoT). Abrange arquiteturas distribuídas, protocolos de comunicação (MQTT, CoAP, HTTP), middleware para IoT, processamento de dados em tempo real e computação de borda (edge computing), capacitando o aluno a projetar e implementar soluções conectadas escaláveis.",
+    "professor": "Ligia Rodrigues Prete",
+    "conteudo": [
+      "Fundamentos de sistemas distribuídos e suas arquiteturas",
+      "Protocolos de comunicação IoT (MQTT, CoAP, HTTP)",
+      "Middleware e plataformas de integração IoT",
+      "Edge Computing e processamento em tempo real",
+      "Projeto prático com dispositivos IoT conectados"
+    ],
+    "projeto": null
+  },
+  {
+    "id": "devops-cicd",
+    "semestre": 5,
+    "titulo": "Integração e Entrega Contínua (DevOps)",
+    "descricao": "Práticas e ferramentas de CI/CD, focando na automação de testes, integração de código e deploy contínuo de aplicações.",
+    "icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polyline points='23 4 23 10 17 10'/><polyline points='1 20 1 14 7 14'/><path d='M3.51 9a9 9 0 0 1 14.85-3.36L23 10'/><path d='M20.49 15a9 9 0 0 1-14.85 3.36L1 14'/></svg>",
+    "iconBg": "linear-gradient(135deg, #7c3aed 0%, #4c1d95 100%)",
+    "resumo": "A disciplina de Integração e Entrega Contínua (DevOps) aborda a cultura, práticas e ferramentas que permitem a automação do ciclo de vida do software. Estuda-se a criação de pipelines de CI/CD, automação de builds e testes, containerização com Docker, orquestração com Kubernetes, infraestrutura como código e monitoramento, com foco em acelerar entregas com qualidade e confiabilidade.",
+    "professor": "Alexandre Aparecido Bernardes",
+    "conteudo": [
+      "Cultura DevOps e o ciclo de vida do software",
+      "Pipelines de CI/CD (Jenkins, GitHub Actions)",
+      "Containerização com Docker e Docker Compose",
+      "Infraestrutura como Código (IaC) e automação",
+      "Monitoramento, logging e observabilidade"
+    ],
+    "projeto": null
+  },
+  {
+    "id": "ia-machine-learning",
+    "semestre": 5,
+    "titulo": "Inteligência Artificial e Aprendizagem de Máquina",
+    "descricao": "Fundamentos de IA, algoritmos de machine learning, modelos preditivos e aplicações práticas na resolução de problemas complexos.",
+    "icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M12 2a4 4 0 0 1 4 4c0 1.1-.9 2-2 2h-4a2 2 0 0 1-2-2 4 4 0 0 1 4-4z'/><path d='M8 8v4a4 4 0 0 0 8 0V8'/><path d='M12 16v6'/><path d='M8 22h8'/><circle cx='9' cy='6' r='0.5'/><circle cx='15' cy='6' r='0.5'/></svg>",
+    "iconBg": "linear-gradient(135deg, #ec4899 0%, #9d174d 100%)",
+    "resumo": "A disciplina introduz os fundamentos da Inteligência Artificial e do Aprendizado de Máquina (Machine Learning). Abrange conceitos como aprendizado supervisionado e não supervisionado, redes neurais, processamento de linguagem natural, visão computacional e ética em IA, preparando o aluno para desenvolver e aplicar modelos inteligentes a problemas reais.",
+    "professor": "André Zagato Gomes",
+    "conteudo": [
+      "Fundamentos de Inteligência Artificial e histórico",
+      "Aprendizado supervisionado: classificação e regressão",
+      "Aprendizado não supervisionado: clustering e redução dimensional",
+      "Redes neurais e introdução ao Deep Learning",
+      "Aplicações práticas e ética em IA"
+    ],
+    "projeto": null
+  },
+  {
+    "id": "design-patterns",
+    "semestre": 5,
+    "titulo": "Modelagem de Padrões de Projetos",
+    "descricao": "Estudo e aplicação prática de Design Patterns (padrões criacionais, estruturais e comportamentais) na arquitetura de software avançada.",
+    "icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='3' y='3' width='7' height='7'/><rect x='14' y='3' width='7' height='7'/><rect x='3' y='14' width='7' height='7'/><path d='M14 17.5h7'/><path d='M17.5 14v7'/></svg>",
+    "iconBg": "linear-gradient(135deg, #f59e0b 0%, #b45309 100%)",
+    "resumo": "A disciplina de Modelagem de Padrões de Projetos estuda os Design Patterns catalogados pelo Gang of Four (GoF) e outros padrões amplamente utilizados na indústria. Abordam-se os padrões criacionais (Singleton, Factory, Builder), estruturais (Adapter, Decorator, Facade) e comportamentais (Observer, Strategy, Command), com foco na aplicação prática para criar arquiteturas de software flexíveis, reutilizáveis e de fácil manutenção.",
+    "professor": "Jefferson Antonio Ribeiro Passerini",
+    "conteudo": [
+      "Introdução aos Design Patterns e o catálogo GoF",
+      "Padrões Criacionais: Singleton, Factory Method, Abstract Factory, Builder",
+      "Padrões Estruturais: Adapter, Decorator, Facade, Composite",
+      "Padrões Comportamentais: Observer, Strategy, Command, State",
+      "Aplicação prática de patterns em projetos reais"
+    ],
+    "projeto": null
+  },
+  {
+    "id": "seguranca-cibernetica",
+    "semestre": 5,
+    "titulo": "Segurança e Defesa Cibernética",
+    "descricao": "Princípios de segurança da informação, criptografia, proteção de infraestruturas de rede e mitigação de vulnerabilidades em sistemas.",
+    "icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z'/><path d='M9 12l2 2 4-4'/></svg>",
+    "iconBg": "linear-gradient(135deg, #dc2626 0%, #7f1d1d 100%)",
+    "resumo": "A disciplina de Segurança e Defesa Cibernética aborda os princípios, técnicas e ferramentas essenciais para a proteção de sistemas e infraestruturas digitais. Estuda-se criptografia simétrica e assimétrica, análise de vulnerabilidades, testes de penetração (pentest), segurança em redes, normas e regulamentações (LGPD, ISO 27001) e estratégias de resposta a incidentes de segurança.",
+    "professor": "Rogério Leão Santos de Oliveira",
+    "conteudo": [
+      "Fundamentos de segurança da informação (CIA Triad)",
+      "Criptografia simétrica e assimétrica",
+      "Análise de vulnerabilidades e testes de penetração",
+      "Segurança em redes e firewalls",
+      "LGPD, normas ISO 27001 e resposta a incidentes"
+    ],
+    "projeto": null
+  },
+  {
+    "id": "si-tecnologias-emergentes",
+    "semestre": 5,
+    "titulo": "Sistema de Informação e Tecnologias Emergentes",
+    "descricao": "Análise do papel dos sistemas de informação nas organizações e o impacto de novas tendências tecnológicas no mercado atual.",
+    "icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z'/><path d='M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z'/></svg>",
+    "iconBg": "linear-gradient(135deg, #6366f1 0%, #3730a3 100%)",
+    "resumo": "Esta disciplina analisa o papel estratégico dos Sistemas de Informação (SI) nas organizações modernas e explora o impacto de tecnologias emergentes como Blockchain, Metaverso, 5G, Computação Quântica e Web3 no mercado e na sociedade. O aluno desenvolve visão crítica sobre como essas tendências estão remodelando modelos de negócios e criando novas oportunidades.",
+    "professor": "Fabiana Pupin Masson Caravieri",
+    "conteudo": [
+      "Papel estratégico dos Sistemas de Informação nas organizações",
+      "Tecnologias emergentes: Blockchain, Web3 e Metaverso",
+      "Impacto do 5G e da Computação Quântica",
+      "Transformação digital e inovação nos negócios",
+      "Estudos de caso e tendências de mercado"
+    ],
+    "projeto": null
+  },
+  {
+    "id": "prog-multiplataforma",
+    "semestre": 5,
+    "titulo": "Programação Multiplataforma",
+    "descricao": "Desenvolvimento e arquitetura de aplicações capazes de rodar em diferentes sistemas operativos e dispositivos utilizando frameworks modernos.",
+    "icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='2' y='3' width='20' height='14' rx='2' ry='2'/><line x1='8' y1='21' x2='16' y2='21'/><line x1='12' y1='17' x2='12' y2='21'/></svg>",
+    "iconBg": "linear-gradient(135deg, #0ea5e9 0%, #0369a1 100%)",
+    "resumo": "A disciplina de Programação Multiplataforma capacita o aluno a desenvolver aplicações que funcionam de forma nativa ou híbrida em diferentes plataformas (Web, Desktop, Mobile). Utiliza-se frameworks modernos como .NET MAUI, React Native ou Flutter para criar interfaces responsivas e performáticas, com foco na reutilização de código e na experiência do utilizador em múltiplos dispositivos.",
+    "professor": "Welington Luis Codinhoto Garcia",
+    "conteudo": [
+      "Conceitos de desenvolvimento multiplataforma",
+      "Frameworks: .NET MAUI, React Native ou Flutter",
+      "Componentes de UI responsivos e adaptativos",
+      "Integração com APIs e serviços backend",
+      "Build, testes e distribuição em múltiplas plataformas"
+    ],
+    "projeto": null
+  },
+  {
+    "id": "computacao-nuvem",
+    "semestre": 5,
+    "titulo": "Computação em Nuvem",
+    "descricao": "Estudo da arquitetura de serviços em nuvem (IaaS, PaaS, SaaS), virtualização e implantação de soluções escaláveis em provedores cloud.",
+    "icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z'/></svg>",
+    "iconBg": "linear-gradient(135deg, #38bdf8 0%, #1e40af 100%)",
+    "resumo": "A disciplina de Computação em Nuvem aborda os fundamentos e práticas de implementação de soluções na nuvem. Estuda-se os modelos de serviço (IaaS, PaaS, SaaS), virtualização, containerização, os principais provedores (AWS, Azure, GCP), segurança em ambientes cloud, arquiteturas serverless e estratégias de escalabilidade e alta disponibilidade.",
+    "professor": "Welington Luis Codinhoto Garcia",
+    "conteudo": [
+      "Modelos de serviço: IaaS, PaaS, SaaS",
+      "Provedores cloud: AWS, Azure e GCP",
+      "Virtualização e containerização na nuvem",
+      "Arquiteturas Serverless e microsserviços",
+      "Segurança, escalabilidade e alta disponibilidade"
+    ],
+    "projeto": null
+  },
+  {
+    "id": "lingua-inglesa-ii",
+    "semestre": 5,
+    "titulo": "Língua Inglesa II",
+    "descricao": "Aprofundamento prático no inglês técnico voltado para a área de Tecnologia da Informação, com foco em leitura, escrita e comunicação corporativa.",
+    "icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='10'/><line x1='2' y1='12' x2='22' y2='12'/><path d='M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z'/></svg>",
+    "iconBg": "linear-gradient(135deg, #f97316 0%, #c2410c 100%)",
+    "resumo": "Língua Inglesa II dá continuidade ao desenvolvimento das competências em inglês técnico, aprofundando a leitura e interpretação de documentação técnica, a escrita de e-mails e relatórios profissionais, e a comunicação oral em contextos corporativos e de TI. Prepara o aluno para apresentações, entrevistas e colaboração em equipas internacionais.",
+    "professor": "Carlos Alberto Gonçalves da Silva",
+    "conteudo": [
+      "Leitura e interpretação de documentação técnica em inglês",
+      "Redação de e-mails e relatórios profissionais",
+      "Vocabulário técnico avançado de TI",
+      "Comunicação oral: apresentações e entrevistas",
+      "Inglês para colaboração em equipas internacionais"
+    ],
+    "projeto": null
   }
 ]
