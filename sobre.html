@@ -17,7 +17,7 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;800&display=swap" rel="stylesheet">
   
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=9">
 
   <style>
     /* Estilos específicos para a página Sobre */
@@ -365,6 +365,67 @@
       .hero-sobre, .grid-2 { grid-template-columns: 1fr; }
       .profile-card { order: -1; margin-bottom: 30px; }
     }
+
+    @media (max-width: 768px) {
+      .intro {
+        padding: 28px 20px;
+      }
+      .intro h1 {
+        font-size: clamp(2rem, 5vw, 3rem);
+        letter-spacing: -1px;
+      }
+      .intro p {
+        font-size: 0.95rem;
+      }
+      .cta-row {
+        justify-content: center;
+      }
+      .btn {
+        padding: 12px 24px;
+        font-size: 0.9rem;
+      }
+      .profile-card {
+        min-height: 320px;
+        padding: 24px;
+      }
+      .avatar {
+        width: 160px;
+        height: 160px;
+      }
+      .profile-name {
+        font-size: 1.2rem;
+      }
+      .skill-tag {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .intro {
+        padding: 24px 16px;
+      }
+      .intro p,
+      .profile-sub,
+      .formacao-details {
+        overflow-wrap: break-word;
+        word-break: break-word;
+      }
+      .formacao-item--with-logo {
+        flex-wrap: wrap;
+      }
+      .logo-link {
+        width: 100%;
+        justify-content: flex-start;
+      }
+      .cta-row {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .btn {
+        text-align: center;
+      }
+    }
   </style>
 </head>
 <body>
@@ -512,7 +573,7 @@
 
   <div id="footer-placeholder"></div>
 
-  <script src="main.js?v=4"></script>
+  <script src="main.js?v=10"></script>
   
 
 <div vw class="enabled">

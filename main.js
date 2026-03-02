@@ -1,48 +1,100 @@
 // Aguarda o carregamento completo do conteúdo da página antes de executar o script
-// v2.0 - Fix Live Server script injection
+// v3.0 - Navbar inline (fix Live Server script injection on navbar.html too)
 document.addEventListener("DOMContentLoaded", function() {
 
-  // --- LÓGICA PRINCIPAL: CARREGAR A NAVBAR E DEPOIS EXECUTAR O RESTO ---
-  fetch('navbar.html')
-    .then(response => {
-      // Verifica se o arquivo foi encontrado. Se não, gera um erro.
-      if (!response.ok) {
-        throw new Error('Navbar.html não encontrado. Verifique o caminho do arquivo.');
-      }
-      return response.text();
-    })
-    .then(data => {
-      // Insere o HTML da navbar no elemento com o ID 'navbar-placeholder'
-      const navbarPlaceholder = document.getElementById('navbar-placeholder');
-      if (navbarPlaceholder) {
-        navbarPlaceholder.innerHTML = data;
-      }
+  // --- CONSTRUIR A NAVBAR VIA JS (evita bug do Live Server injetar scripts) ---
+  const navbarPlaceholder = document.getElementById('navbar-placeholder');
+  if (navbarPlaceholder) {
+    navbarPlaceholder.innerHTML = `
+    <header>
+      <div class="nav-inner">
+        <a href="index.html" class="brand">
+          <div class="logo">GH</div>
+          <div>
+            <div class="brand-text-name">Guilherme Henrique</div>
+            <div class="brand-text-sub">Análise e Desenvolvimento de Sistemas</div>
+          </div>
+        </a>
+        <div class="nav-controls">
+          <nav class="desktop-nav">
+            <a href="index.html">Home</a>
+            <a href="sobre.html">Sobre</a>
+            <a href="grade.html">Grade</a>
+            <a href="projetos.html">Projetos</a>
+            <a href="contato.html">Contato</a>
+          </nav>
+          <div class="accessibility-controls">
+            <button id="decrease-font" aria-label="Diminuir fonte">A-</button>
+            <button id="reset-font" aria-label="Restaurar fonte padrão">A</button>
+            <button id="increase-font" aria-label="Aumentar fonte">A+</button>
+            <button id="theme-toggle" aria-label="Alternar tema">
+              <svg class="sun" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 14.95a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414l-.707.707zm-2.121-4.243a1 1 0 010-1.414l.707-.707a1 1 0 111.414 1.414l-.707.707a1 1 0 01-1.414 0zM4 11a1 1 0 100-2H3a1 1 0 100 2h1z"></path></svg>
+              <svg class="moon" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+            </button>
+          </div>
+        </div>
+        <button class="hamburger-menu" aria-label="Abrir menu">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </button>
+      </div>
+    </header>
+    <div class="mobile-nav-overlay"></div>
+    <div class="mobile-nav">
+      <a href="index.html">Home</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="grade.html">Grade</a>
+      <a href="projetos.html">Projetos</a>
+      <a href="contato.html">Contato</a>
+      <div class="accessibility-controls mobile-accessibility">
+        <button id="decrease-font-mobile" aria-label="Diminuir fonte">A-</button>
+        <button id="reset-font-mobile" aria-label="Restaurar fonte padrão">A</button>
+        <button id="increase-font-mobile" aria-label="Aumentar fonte">A+</button>
+        <button id="theme-toggle-mobile" aria-label="Alternar tema">
+          <svg class="sun" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 14.95a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414l-.707.707zm-2.121-4.243a1 1 0 010-1.414l.707-.707a1 1 0 111.414 1.414l-.707.707a1 1 0 01-1.414 0zM4 11a1 1 0 100-2H3a1 1 0 100 2h1z"></path></svg>
+          <svg class="moon" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+        </button>
+      </div>
+    </div>`;
+  }
 
-      // =====================================================================
-      // TODAS AS FUNÇÕES AGORA SÃO EXECUTADAS DEPOIS DA NAVBAR ESTAR NA TELA
-      // =====================================================================
+  // =====================================================================
+  // TODAS AS FUNÇÕES AGORA SÃO EXECUTADAS DEPOIS DA NAVBAR ESTAR NA TELA
+  // =====================================================================
 
       // --- LÓGICA DE TEMA (MODO ESCURO) ---
       const themeToggle = document.getElementById('theme-toggle');
-      if (themeToggle) {
-        const currentTheme = localStorage.getItem('theme');
-        if (currentTheme === 'dark') {
-          document.body.classList.add('dark-mode');
-        }
-        themeToggle.addEventListener('click', () => {
+      const themeToggleMobile = document.getElementById('theme-toggle-mobile');
+
+      function applyThemeToggle(btn) {
+        if (!btn) return;
+        btn.addEventListener('click', () => {
           document.body.classList.toggle('dark-mode');
           let theme = document.body.classList.contains('dark-mode') ? 'dark' : 'light';
           localStorage.setItem('theme', theme);
         });
       }
 
+      if (themeToggle || themeToggleMobile) {
+        const currentTheme = localStorage.getItem('theme');
+        if (currentTheme === 'dark') {
+          document.body.classList.add('dark-mode');
+        }
+        applyThemeToggle(themeToggle);
+        applyThemeToggle(themeToggleMobile);
+      }
+
       // --- LÓGICA DE TAMANHO DA FONTE ---
       const increaseFontBtn = document.getElementById('increase-font');
       const decreaseFontBtn = document.getElementById('decrease-font');
       const resetFontBtn = document.getElementById('reset-font');
+      const increaseFontBtnMobile = document.getElementById('increase-font-mobile');
+      const decreaseFontBtnMobile = document.getElementById('decrease-font-mobile');
+      const resetFontBtnMobile = document.getElementById('reset-font-mobile');
       const rootElement = document.documentElement;
 
-      if (increaseFontBtn && decreaseFontBtn && resetFontBtn) {
+      if (increaseFontBtn || increaseFontBtnMobile) {
         const initialFontSize = 16;
         let currentFontSize = parseFloat(localStorage.getItem('fontSize')) || initialFontSize;
 
@@ -52,22 +104,22 @@ document.addEventListener("DOMContentLoaded", function() {
         }
         applyFontSize();
 
-        increaseFontBtn.addEventListener('click', () => {
-          if (currentFontSize < 24) {
-            currentFontSize += 1;
-            applyFontSize();
-          }
-        });
-        decreaseFontBtn.addEventListener('click', () => {
-          if (currentFontSize > 12) {
-            currentFontSize -= 1;
-            applyFontSize();
-          }
-        });
-        resetFontBtn.addEventListener('click', () => {
-          currentFontSize = initialFontSize;
-          applyFontSize();
-        });
+        const increaseHandler = () => {
+          if (currentFontSize < 24) { currentFontSize += 1; applyFontSize(); }
+        };
+        const decreaseHandler = () => {
+          if (currentFontSize > 12) { currentFontSize -= 1; applyFontSize(); }
+        };
+        const resetHandler = () => {
+          currentFontSize = initialFontSize; applyFontSize();
+        };
+
+        if (increaseFontBtn) increaseFontBtn.addEventListener('click', increaseHandler);
+        if (decreaseFontBtn) decreaseFontBtn.addEventListener('click', decreaseHandler);
+        if (resetFontBtn) resetFontBtn.addEventListener('click', resetHandler);
+        if (increaseFontBtnMobile) increaseFontBtnMobile.addEventListener('click', increaseHandler);
+        if (decreaseFontBtnMobile) decreaseFontBtnMobile.addEventListener('click', decreaseHandler);
+        if (resetFontBtnMobile) resetFontBtnMobile.addEventListener('click', resetHandler);
       }
 
       // --- LÓGICA DO MENU HAMBÚRGUER ---
@@ -76,10 +128,6 @@ document.addEventListener("DOMContentLoaded", function() {
       const mobileNavOverlay = document.querySelector('.mobile-nav-overlay');
       
       if (hamburger && mobileNav) {
-        const accessibilityControls = document.querySelector('.accessibility-controls');
-        if (window.innerWidth <= 768 && accessibilityControls) {
-            mobileNav.appendChild(accessibilityControls);
-        }
         
         const toggleMenu = () => {
           hamburger.classList.toggle('active');
@@ -175,14 +223,6 @@ document.addEventListener("DOMContentLoaded", function() {
           link.classList.add('active');
         }
       });
-    })
-    .catch(error => {
-      console.error('Erro ao carregar a navbar:', error);
-      const navbarPlaceholder = document.getElementById('navbar-placeholder');
-      if (navbarPlaceholder) {
-        navbarPlaceholder.innerHTML = '<p style="text-align:center; color:red;">Erro ao carregar o menu de navegação.</p>';
-      }
-    });
 
   // --- CARREGAR O FOOTER (construído via JS para evitar bug do Live Server) ---
   const footerPlaceholder = document.getElementById('footer-placeholder');

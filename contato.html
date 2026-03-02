@@ -19,7 +19,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=9">
 
   <style>
     /* ── Layout ── */
@@ -452,6 +452,47 @@
         grid-template-columns: 1fr;
         gap: 20px;
       }
+
+      .card-value,
+      .contact-header .subtitle {
+        overflow-wrap: break-word;
+        word-break: break-word;
+      }
+    }
+
+    @media (max-width: 420px) {
+      main { padding: 28px 12px; }
+
+      .contact-header {
+        margin-bottom: 28px;
+      }
+
+      .contact-card {
+        padding: 18px 14px;
+        gap: 10px;
+      }
+
+      .card-icon {
+        width: 42px;
+        height: 42px;
+      }
+
+      .card-label {
+        font-size: 0.7rem;
+      }
+
+      .card-value {
+        font-size: 0.88rem;
+      }
+
+      .contact-form-wrapper {
+        padding: 22px 14px;
+      }
+
+      .form-group input,
+      .form-group textarea {
+        padding: 12px 12px;
+      }
     }
   </style>
 </head>
@@ -607,7 +648,7 @@
 
   <div id="footer-placeholder"></div>
 
-  <script src="main.js?v=4"></script>
+  <script src="main.js?v=10"></script>
 
 
   <!-- VLibras -->
