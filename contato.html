@@ -19,7 +19,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css?v=9">
+  <link rel="stylesheet" href="style.css?v=12">
 
   <style>
     /* ── Layout ── */
@@ -285,6 +285,13 @@
       box-sizing: border-box;
     }
 
+    .form-group input:focus-visible,
+    .form-group textarea:focus-visible {
+      outline: 3px solid var(--accent1);
+      outline-offset: 2px;
+      border-radius: 12px;
+    }
+
     .form-group input::placeholder,
     .form-group textarea::placeholder {
       color: var(--text-secondary);
@@ -498,9 +505,11 @@
 </head>
 <body>
 
+  <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
+
   <div id="navbar-placeholder"></div>
 
-  <main class="page-container">
+  <main id="main-content" class="page-container">
     <div class="contact-wrapper">
 
       <!-- Header -->
@@ -648,7 +657,7 @@
 
   <div id="footer-placeholder"></div>
 
-  <script src="main.js?v=10"></script>
+  <script src="main.js?v=12"></script>
 
 
   <!-- VLibras -->

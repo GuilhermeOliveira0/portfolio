@@ -19,7 +19,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;800&display=swap" rel="stylesheet">
   
-  <link rel="stylesheet" href="style.css?v=9">
+  <link rel="stylesheet" href="style.css?v=12">
   
   <style>
     .projects-hero {
@@ -415,9 +415,11 @@
 </head>
 <body>
 
+  <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
+
   <div id="navbar-placeholder"></div>
 
-  <main class="page-container fade-in-section">
+  <main id="main-content" class="page-container fade-in-section">
     <div class="projects-hero">
       <h1>Meus Projetos</h1>
       <p>Confira alguns dos projetos que desenvolvi durante minha jornada acadêmica e profissional</p>
@@ -504,7 +506,7 @@
     <!-- Modais de Detalhes -->
     <div id="modal1" class="modal">
       <div class="modal-content">
-        <button class="modal-close" onclick="closeModal('modal1')">&times;</button>
+        <button class="modal-close" onclick="closeModal('modal1')" aria-label="Fechar">&times;</button>
         <h2>API de Vendas</h2>
         <div class="tech-tags">
           <span>C#</span>
@@ -533,7 +535,7 @@
 
     <div id="modal2" class="modal">
       <div class="modal-content">
-        <button class="modal-close" onclick="closeModal('modal2')">&times;</button>
+        <button class="modal-close" onclick="closeModal('modal2')" aria-label="Fechar">&times;</button>
         <h2>Sistema Escolar</h2>
         <div class="tech-tags">
           <span>Java</span>
@@ -561,7 +563,7 @@
 
     <div id="modal3" class="modal">
       <div class="modal-content">
-        <button class="modal-close" onclick="closeModal('modal3')">&times;</button>
+        <button class="modal-close" onclick="closeModal('modal3')" aria-label="Fechar">&times;</button>
         <h2>Portfólio Profissional</h2>
         <div class="tech-tags">
           <span>HTML5</span>
@@ -592,7 +594,7 @@
 
   <div id="footer-placeholder"></div>
 
-  <script src="main.js?v=10"></script>
+  <script src="main.js?v=12"></script>
   
   <script>
     // Funções do Modal

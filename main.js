@@ -27,6 +27,12 @@ document.addEventListener("DOMContentLoaded", function() {
             <button id="decrease-font" aria-label="Diminuir fonte">A-</button>
             <button id="reset-font" aria-label="Restaurar fonte padrão">A</button>
             <button id="increase-font" aria-label="Aumentar fonte">A+</button>
+            <button id="colorblind-toggle" aria-label="Ativar modo para daltonismo">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                <path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6-10-6-10-6z"></path>
+                <circle cx="12" cy="12" r="3"></circle>
+              </svg>
+            </button>
             <button id="theme-toggle" aria-label="Alternar tema">
               <svg class="sun" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 14.95a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414l-.707.707zm-2.121-4.243a1 1 0 010-1.414l.707-.707a1 1 0 111.414 1.414l-.707.707a1 1 0 01-1.414 0zM4 11a1 1 0 100-2H3a1 1 0 100 2h1z"></path></svg>
               <svg class="moon" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
@@ -51,6 +57,12 @@ document.addEventListener("DOMContentLoaded", function() {
         <button id="decrease-font-mobile" aria-label="Diminuir fonte">A-</button>
         <button id="reset-font-mobile" aria-label="Restaurar fonte padrão">A</button>
         <button id="increase-font-mobile" aria-label="Aumentar fonte">A+</button>
+        <button id="colorblind-toggle-mobile" aria-label="Ativar modo para daltonismo">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+            <path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6-10-6-10-6z"></path>
+            <circle cx="12" cy="12" r="3"></circle>
+          </svg>
+        </button>
         <button id="theme-toggle-mobile" aria-label="Alternar tema">
           <svg class="sun" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 14.95a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414l-.707.707zm-2.121-4.243a1 1 0 010-1.414l.707-.707a1 1 0 111.414 1.414l-.707.707a1 1 0 01-1.414 0zM4 11a1 1 0 100-2H3a1 1 0 100 2h1z"></path></svg>
           <svg class="moon" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
@@ -66,6 +78,8 @@ document.addEventListener("DOMContentLoaded", function() {
       // --- LÓGICA DE TEMA (MODO ESCURO) ---
       const themeToggle = document.getElementById('theme-toggle');
       const themeToggleMobile = document.getElementById('theme-toggle-mobile');
+      const colorblindToggle = document.getElementById('colorblind-toggle');
+      const colorblindToggleMobile = document.getElementById('colorblind-toggle-mobile');
 
       function applyThemeToggle(btn) {
         if (!btn) return;
@@ -84,6 +98,22 @@ document.addEventListener("DOMContentLoaded", function() {
         applyThemeToggle(themeToggle);
         applyThemeToggle(themeToggleMobile);
       }
+
+      function applyColorblindToggle(btn) {
+        if (!btn) return;
+        btn.addEventListener('click', () => {
+          document.body.classList.toggle('colorblind-mode');
+          const colorblindMode = document.body.classList.contains('colorblind-mode') ? 'enabled' : 'disabled';
+          localStorage.setItem('colorblindMode', colorblindMode);
+        });
+      }
+
+      const savedColorblindMode = localStorage.getItem('colorblindMode');
+      if (savedColorblindMode === 'enabled') {
+        document.body.classList.add('colorblind-mode');
+      }
+      applyColorblindToggle(colorblindToggle);
+      applyColorblindToggle(colorblindToggleMobile);
 
       // --- LÓGICA DE TAMANHO DA FONTE ---
       const increaseFontBtn = document.getElementById('increase-font');
@@ -223,6 +253,31 @@ document.addEventListener("DOMContentLoaded", function() {
           link.classList.add('active');
         }
       });
+
+  // --- BOTÃO GLOBAL: VOLTAR AO TOPO ---
+  const backToTopButton = document.createElement('button');
+  backToTopButton.id = 'back-to-top';
+  backToTopButton.setAttribute('aria-label', 'Voltar ao topo');
+  backToTopButton.innerHTML = `
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+      <path fill="currentColor" d="M12 4.5l-7 7a1 1 0 101.4 1.4l4.6-4.6V20a1 1 0 102 0V8.3l4.6 4.6a1 1 0 001.4-1.4l-7-7z"/>
+    </svg>`;
+  document.body.appendChild(backToTopButton);
+
+  const toggleBackToTopButton = () => {
+    if (window.scrollY > 300) {
+      backToTopButton.classList.add('show');
+    } else {
+      backToTopButton.classList.remove('show');
+    }
+  };
+
+  window.addEventListener('scroll', toggleBackToTopButton);
+  toggleBackToTopButton();
+
+  backToTopButton.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
 
   // --- CARREGAR O FOOTER (construído via JS para evitar bug do Live Server) ---
   const footerPlaceholder = document.getElementById('footer-placeholder');
