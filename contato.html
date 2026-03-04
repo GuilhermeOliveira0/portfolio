@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contato — Guilherme Henrique</title>
+  <link rel="icon" type="image/png" href="favicon.png">
 
   <!-- SEO & Open Graph -->
   <meta name="description" content="Portfólio de Guilherme Henrique, estudante de Análise e Desenvolvimento de Sistemas (FATEC) e Desenvolvedor. Foco em C#, .NET, bancos de dados e eficiência operacional.">
@@ -19,489 +20,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css?v=12">
-
-  <style>
-    /* ── Layout ── */
-    main {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-grow: 1;
-      padding: 60px 20px;
-    }
-
-    .contact-wrapper {
-      max-width: 1100px;
-      width: 100%;
-    }
-
-    /* ── Header ── */
-    .contact-header {
-      text-align: center;
-      margin-bottom: 56px;
-    }
-
-    .contact-header .pre {
-      font-size: 0.9rem;
-      color: var(--accent2);
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      margin-bottom: 12px;
-      animation: fadeInUp 0.5s ease-out both;
-    }
-
-    .contact-header h1 {
-      font-size: clamp(2.2rem, 5vw, 3.2rem);
-      font-weight: 800;
-      letter-spacing: -1.5px;
-      background: linear-gradient(135deg, var(--accent1) 0%, var(--accent2) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      margin-bottom: 16px;
-      animation: fadeInUp 0.5s ease-out 0.1s both;
-    }
-
-    .contact-header .subtitle {
-      font-size: 1.1rem;
-      color: var(--text-secondary);
-      max-width: 500px;
-      margin: 0 auto;
-      line-height: 1.7;
-      animation: fadeInUp 0.5s ease-out 0.2s both;
-    }
-
-    /* ── Layout duas colunas ── */
-    .contact-body {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
-      align-items: start;
-    }
-
-    /* ── Grid 2×2 (cards) ── */
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-    }
-
-    /* ── Card ── */
-    .contact-card {
-      background: var(--card-bg);
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius);
-      padding: 28px 24px;
-      text-decoration: none;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 14px;
-      position: relative;
-      overflow: hidden;
-      transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-                  box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-                  border-color 0.4s ease;
-      animation: fadeInUp 0.6s ease-out both;
-    }
-
-    .contact-card:nth-child(1) { animation-delay: 0.1s; }
-    .contact-card:nth-child(2) { animation-delay: 0.2s; }
-    .contact-card:nth-child(3) { animation-delay: 0.3s; }
-    .contact-card:nth-child(4) { animation-delay: 0.4s; }
-
-    /* Top gradient bar */
-    .contact-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 3px;
-      background: linear-gradient(90deg, var(--accent1), var(--accent2));
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 0.4s ease;
-    }
-
-    .contact-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 16px 48px rgba(14, 165, 233, 0.12), 0 4px 16px rgba(37, 99, 235, 0.08);
-      border-color: rgba(14, 165, 233, 0.25);
-    }
-
-    .contact-card:hover::before {
-      transform: scaleX(1);
-    }
-
-    /* ── Icon circle ── */
-    .card-icon {
-      width: 48px;
-      height: 48px;
-      border-radius: 14px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: linear-gradient(135deg, var(--accent1), var(--accent2));
-      box-shadow: 0 6px 18px rgba(14, 165, 233, 0.25);
-      transition: transform 0.4s ease, box-shadow 0.4s ease;
-      flex-shrink: 0;
-    }
-
-    .contact-card:hover .card-icon {
-      transform: scale(1.08) rotate(3deg);
-      box-shadow: 0 8px 24px rgba(37, 99, 235, 0.35);
-    }
-
-    .card-icon svg {
-      width: 22px;
-      height: 22px;
-      color: #fff;
-      stroke: #fff;
-    }
-
-    /* ── Text ── */
-    .card-info {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-    }
-
-    .card-label {
-      font-size: 0.75rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 1.2px;
-      color: var(--text-secondary);
-    }
-
-    .card-value {
-      font-size: 0.95rem;
-      font-weight: 600;
-      color: var(--text-primary);
-      word-break: break-word;
-      line-height: 1.5;
-    }
-
-    /* ── Action arrow ── */
-    .card-arrow {
-      margin-top: auto;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 0.8rem;
-      font-weight: 600;
-      color: var(--accent1);
-      transition: gap 0.3s ease, color 0.3s ease;
-    }
-
-    .card-arrow svg {
-      width: 14px;
-      height: 14px;
-      transition: transform 0.3s ease;
-    }
-
-    .contact-card:hover .card-arrow {
-      color: var(--accent2);
-      gap: 10px;
-    }
-
-    .contact-card:hover .card-arrow svg {
-      transform: translateX(3px);
-    }
-
-    /* ══════════════════════════════════════
-       FORMULÁRIO DE CONTATO
-       ══════════════════════════════════════ */
-    .contact-form-wrapper {
-      background: var(--card-bg);
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius);
-      padding: 40px 36px;
-      position: relative;
-      overflow: hidden;
-      animation: fadeInUp 0.6s ease-out 0.3s both;
-      box-shadow: var(--shadow);
-    }
-
-    .contact-form-wrapper::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 4px;
-      background: linear-gradient(90deg, var(--accent1), var(--accent2));
-    }
-
-    .contact-form-wrapper h2 {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: var(--text-primary);
-      margin-bottom: 6px;
-    }
-
-    .contact-form-wrapper .form-subtitle {
-      font-size: 0.95rem;
-      color: var(--text-secondary);
-      margin-bottom: 28px;
-      line-height: 1.6;
-    }
-
-    .contact-form {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-
-    .form-group {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
-
-    .form-group label {
-      font-size: 0.8rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      color: var(--text-secondary);
-    }
-
-    .form-group input,
-    .form-group textarea {
-      width: 100%;
-      padding: 14px 16px;
-      border: 1px solid var(--border-color);
-      border-radius: 12px;
-      background: var(--bg-main);
-      color: var(--text-primary);
-      font-family: var(--font-main);
-      font-size: 0.95rem;
-      transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-      outline: none;
-      box-sizing: border-box;
-    }
-
-    .form-group input:focus-visible,
-    .form-group textarea:focus-visible {
-      outline: 3px solid var(--accent1);
-      outline-offset: 2px;
-      border-radius: 12px;
-    }
-
-    .form-group input::placeholder,
-    .form-group textarea::placeholder {
-      color: var(--text-secondary);
-      opacity: 0.6;
-    }
-
-    .form-group input:focus,
-    .form-group textarea:focus {
-      border-color: var(--accent1);
-      box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.15);
-    }
-
-    .form-group textarea {
-      resize: vertical;
-      min-height: 130px;
-    }
-
-    .form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-    }
-
-    /* ── Botão de envio ── */
-    .form-submit-btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      padding: 16px 36px;
-      border: none;
-      border-radius: 999px;
-      background: linear-gradient(135deg, #0ea5e9 0%, #2563eb 100%);
-      color: #fff;
-      font-family: var(--font-main);
-      font-size: 1rem;
-      font-weight: 700;
-      cursor: pointer;
-      box-shadow: 0 8px 25px rgba(14, 165, 233, 0.4);
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-      position: relative;
-      overflow: hidden;
-      margin-top: 4px;
-      width: 100%;
-    }
-
-    .form-submit-btn::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-      transition: left 0.5s ease;
-    }
-
-    .form-submit-btn:hover::before {
-      left: 100%;
-    }
-
-    .form-submit-btn:hover {
-      transform: translateY(-4px) scale(1.02);
-      box-shadow: 0 12px 30px rgba(14, 165, 233, 0.5);
-    }
-
-    .form-submit-btn svg {
-      width: 18px;
-      height: 18px;
-    }
-
-    /* ── Animations ── */
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(28px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-    /* ══════════════════════════════════════
-       DARK MODE
-       ══════════════════════════════════════ */
-    body.dark-mode .contact-card {
-      background: var(--card-bg);
-      border-color: rgba(37, 99, 235, 0.15);
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-    }
-
-    body.dark-mode .contact-card:hover {
-      box-shadow: 0 16px 48px rgba(14, 165, 233, 0.15), 0 4px 16px rgba(37, 99, 235, 0.12);
-      border-color: rgba(14, 165, 233, 0.3);
-    }
-
-    body.dark-mode .card-value {
-      color: #e2e8f0;
-    }
-
-    body.dark-mode .card-label {
-      color: #94a3b8;
-    }
-
-    body.dark-mode .contact-header h1 {
-      -webkit-text-fill-color: transparent;
-    }
-
-    body.dark-mode .contact-header .subtitle {
-      color: #94a3b8;
-    }
-
-    body.dark-mode .contact-form-wrapper {
-      background: var(--card-bg);
-      border-color: rgba(37, 99, 235, 0.15);
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-    }
-
-    body.dark-mode .form-group input,
-    body.dark-mode .form-group textarea {
-      background: #0f172a;
-      border-color: #1e293b;
-      color: #e2e8f0;
-    }
-
-    body.dark-mode .form-group input::placeholder,
-    body.dark-mode .form-group textarea::placeholder {
-      color: #64748b;
-    }
-
-    body.dark-mode .form-group input:focus,
-    body.dark-mode .form-group textarea:focus {
-      border-color: var(--accent1);
-      box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.2);
-    }
-
-    body.dark-mode .form-group label {
-      color: #94a3b8;
-    }
-
-    /* ══════════════════════════════════════
-       RESPONSIVO
-       ══════════════════════════════════════ */
-    @media (max-width: 860px) {
-      .contact-body {
-        grid-template-columns: 1fr;
-        gap: 32px;
-      }
-    }
-
-    @media (max-width: 640px) {
-      main { padding: 40px 16px; }
-
-      .contact-header { margin-bottom: 40px; }
-
-      .contact-grid {
-        grid-template-columns: 1fr;
-        gap: 16px;
-      }
-
-      .contact-card {
-        padding: 24px 20px;
-      }
-
-      .contact-form-wrapper {
-        padding: 28px 24px;
-      }
-
-      .form-row {
-        grid-template-columns: 1fr;
-        gap: 20px;
-      }
-
-      .card-value,
-      .contact-header .subtitle {
-        overflow-wrap: break-word;
-        word-break: break-word;
-      }
-    }
-
-    @media (max-width: 420px) {
-      main { padding: 28px 12px; }
-
-      .contact-header {
-        margin-bottom: 28px;
-      }
-
-      .contact-card {
-        padding: 18px 14px;
-        gap: 10px;
-      }
-
-      .card-icon {
-        width: 42px;
-        height: 42px;
-      }
-
-      .card-label {
-        font-size: 0.7rem;
-      }
-
-      .card-value {
-        font-size: 0.88rem;
-      }
-
-      .contact-form-wrapper {
-        padding: 22px 14px;
-      }
-
-      .form-group input,
-      .form-group textarea {
-        padding: 12px 12px;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css?v=13">
 </head>
 <body>
 
@@ -509,7 +28,7 @@
 
   <div id="navbar-placeholder"></div>
 
-  <main id="main-content" class="page-container">
+  <main id="main-content" class="page-container contato-main">
     <div class="contact-wrapper">
 
       <!-- Header -->
@@ -622,22 +141,28 @@
             <div class="form-row">
               <div class="form-group">
                 <label for="name">Nome</label>
-                <input type="text" id="name" name="name" placeholder="Seu nome completo" required>
+                <input type="text" id="name" name="name" placeholder="Seu nome completo" required minlength="2" maxlength="100" autocomplete="name">
               </div>
               <div class="form-group">
                 <label for="email">E-mail</label>
-                <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+                <input type="email" id="email" name="email" placeholder="seu@email.com" required maxlength="254" autocomplete="email">
               </div>
             </div>
 
             <div class="form-group">
               <label for="subject">Assunto</label>
-              <input type="text" id="subject" name="subject" placeholder="Sobre o que deseja falar?" required>
+              <input type="text" id="subject" name="subject" placeholder="Sobre o que deseja falar?" required minlength="3" maxlength="150">
+            </div>
+
+            <!-- Honeypot anti-spam (campo invisível) -->
+            <div style="position:absolute;left:-9999px;" aria-hidden="true">
+              <label for="_gotcha">Não preencha este campo</label>
+              <input type="text" id="_gotcha" name="_gotcha" tabindex="-1" autocomplete="off">
             </div>
 
             <div class="form-group">
               <label for="message">Mensagem</label>
-              <textarea id="message" name="message" placeholder="Escreva sua mensagem aqui..." required></textarea>
+              <textarea id="message" name="message" placeholder="Escreva sua mensagem aqui..." required minlength="10" maxlength="2000"></textarea>
             </div>
 
             <button type="submit" class="form-submit-btn">
@@ -657,7 +182,7 @@
 
   <div id="footer-placeholder"></div>
 
-  <script src="main.js?v=12"></script>
+  <script src="main.js?v=13" defer></script>
 
 
   <!-- VLibras -->
@@ -667,10 +192,7 @@
       <div class="vw-plugin-top-wrapper"></div>
     </div>
   </div>
-  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
-  <script>
-    new window.VLibras.Widget('https://vlibras.gov.br/app');
-  </script>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js" onload="new window.VLibras.Widget('https://vlibras.gov.br/app');"></script>
 
 </body>
 </html>

@@ -82,8 +82,18 @@
     "descricao": "Princípios de usabilidade, design de interfaces e experiência do usuário (UX).",
     "icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M12 2a3 3 0 0 0-3 3v4a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z'/><path d='M19 10v2a7 7 0 0 1-14 0v-2'/><line x1='12' y1='19' x2='12' y2='22'/><path d='M8 22h8'/><rect x='2' y='10' width='4' height='8' rx='1'/><rect x='18' y='10' width='4' height='8' rx='1'/></svg>",
     "iconBg": "linear-gradient(135deg, #00897B 0%, #00695C 100%)",
-    "professor": "A ser definido",
-    "conteudo": ["Design Centrado no Usuário", "Heurísticas de Usabilidade de Nielsen", "Prototipagem de Baixa e Alta Fidelidade (Figma)", "Testes de Usabilidade com Usuários"],
+    "resumo": "A disciplina de Interação Humano-Computador estuda como projetar interfaces digitais mais intuitivas, acessíveis e eficientes, com foco na experiência do usuário. São aplicados princípios de usabilidade, arquitetura da informação, prototipação e testes com usuários para validar soluções centradas nas pessoas.",
+    "professor": "Ligia Rodrigues Prete",
+    "conteudo": [
+      "Fundamentos de Interação Humano-Computador",
+      "Design Centrado no Usuário (DCU)",
+      "Heurísticas de Usabilidade de Nielsen",
+      "Arquitetura da Informação e Fluxos de Navegação",
+      "Prototipagem de Baixa e Alta Fidelidade (Figma)",
+      "Acessibilidade e boas práticas de interface",
+      "Testes de Usabilidade com Usuários",
+      "Análise e melhoria contínua da experiência do usuário"
+    ],
     "projeto": null
   },
   {

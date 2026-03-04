@@ -1,5 +1,14 @@
 // Aguarda o carregamento completo do conteúdo da página antes de executar o script
-// v3.0 - Navbar inline (fix Live Server script injection on navbar.html too)
+// v5.0 - QA hardening: null checks, safe localStorage, XSS review
+
+// Helpers seguros para localStorage (evita erros em navegação privada / contextos restritos)
+function safeGetItem(key) {
+  try { return localStorage.getItem(key); } catch { return null; }
+}
+function safeSetItem(key, value) {
+  try { localStorage.setItem(key, value); } catch { /* silently fail */ }
+}
+
 document.addEventListener("DOMContentLoaded", function() {
 
   // --- CONSTRUIR A NAVBAR VIA JS (evita bug do Live Server injetar scripts) ---
@@ -9,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function() {
     <header>
       <div class="nav-inner">
         <a href="index.html" class="brand">
-          <div class="logo">GH</div>
+          <img src="favicon.png" alt="Logo do portfólio" class="logo">
           <div>
             <div class="brand-text-name">Guilherme Henrique</div>
             <div class="brand-text-sub">Análise e Desenvolvimento de Sistemas</div>
@@ -28,10 +37,11 @@ document.addEventListener("DOMContentLoaded", function() {
             <button id="reset-font" aria-label="Restaurar fonte padrão">A</button>
             <button id="increase-font" aria-label="Aumentar fonte">A+</button>
             <button id="colorblind-toggle" aria-label="Ativar modo para daltonismo">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
-                <path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6-10-6-10-6z"></path>
-                <circle cx="12" cy="12" r="3"></circle>
-              </svg>
+              <img src="img/daltonico.png" alt="" aria-hidden="true" />
+            </button>
+            <button id="toggle-vlibras" aria-label="Ocultar ou Mostrar VLibras">
+              <img src="img/acessibilidade.png" alt="" aria-hidden="true" />
+              <span class="icon-slash" aria-hidden="true"></span>
             </button>
             <button id="theme-toggle" aria-label="Alternar tema">
               <svg class="sun" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 14.95a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414l-.707.707zm-2.121-4.243a1 1 0 010-1.414l.707-.707a1 1 0 111.414 1.414l-.707.707a1 1 0 01-1.414 0zM4 11a1 1 0 100-2H3a1 1 0 100 2h1z"></path></svg>
@@ -58,10 +68,11 @@ document.addEventListener("DOMContentLoaded", function() {
         <button id="reset-font-mobile" aria-label="Restaurar fonte padrão">A</button>
         <button id="increase-font-mobile" aria-label="Aumentar fonte">A+</button>
         <button id="colorblind-toggle-mobile" aria-label="Ativar modo para daltonismo">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
-            <path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6-10-6-10-6z"></path>
-            <circle cx="12" cy="12" r="3"></circle>
-          </svg>
+          <img src="img/daltonico.png" alt="" aria-hidden="true" />
+        </button>
+        <button id="toggle-vlibras-mobile" aria-label="Ocultar ou Mostrar VLibras">
+          <img src="img/acessibilidade.png" alt="" aria-hidden="true" />
+          <span class="icon-slash" aria-hidden="true"></span>
         </button>
         <button id="theme-toggle-mobile" aria-label="Alternar tema">
           <svg class="sun" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 14.95a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414l-.707.707zm-2.121-4.243a1 1 0 010-1.414l.707-.707a1 1 0 111.414 1.414l-.707.707a1 1 0 01-1.414 0zM4 11a1 1 0 100-2H3a1 1 0 100 2h1z"></path></svg>
@@ -80,18 +91,36 @@ document.addEventListener("DOMContentLoaded", function() {
       const themeToggleMobile = document.getElementById('theme-toggle-mobile');
       const colorblindToggle = document.getElementById('colorblind-toggle');
       const colorblindToggleMobile = document.getElementById('colorblind-toggle-mobile');
+      const toggleVlibras = document.getElementById('toggle-vlibras');
+      const toggleVlibrasMobile = document.getElementById('toggle-vlibras-mobile');
+
+      function syncAccessibilityToggleStates() {
+        const isColorblindEnabled = document.body.classList.contains('colorblind-mode');
+        [colorblindToggle, colorblindToggleMobile].forEach((btn) => {
+          if (!btn) return;
+          btn.classList.toggle('is-active', isColorblindEnabled);
+          btn.setAttribute('aria-pressed', isColorblindEnabled ? 'true' : 'false');
+        });
+
+        const isVlibrasHidden = document.body.classList.contains('hide-vlibras');
+        [toggleVlibras, toggleVlibrasMobile].forEach((btn) => {
+          if (!btn) return;
+          btn.classList.toggle('is-active', isVlibrasHidden);
+          btn.setAttribute('aria-pressed', isVlibrasHidden ? 'true' : 'false');
+        });
+      }
 
       function applyThemeToggle(btn) {
         if (!btn) return;
         btn.addEventListener('click', () => {
           document.body.classList.toggle('dark-mode');
           let theme = document.body.classList.contains('dark-mode') ? 'dark' : 'light';
-          localStorage.setItem('theme', theme);
+          safeSetItem('theme', theme);
         });
       }
 
       if (themeToggle || themeToggleMobile) {
-        const currentTheme = localStorage.getItem('theme');
+        const currentTheme = safeGetItem('theme');
         if (currentTheme === 'dark') {
           document.body.classList.add('dark-mode');
         }
@@ -104,16 +133,18 @@ document.addEventListener("DOMContentLoaded", function() {
         btn.addEventListener('click', () => {
           document.body.classList.toggle('colorblind-mode');
           const colorblindMode = document.body.classList.contains('colorblind-mode') ? 'enabled' : 'disabled';
-          localStorage.setItem('colorblindMode', colorblindMode);
+          safeSetItem('colorblindMode', colorblindMode);
+          syncAccessibilityToggleStates();
         });
       }
 
-      const savedColorblindMode = localStorage.getItem('colorblindMode');
+      const savedColorblindMode = safeGetItem('colorblindMode');
       if (savedColorblindMode === 'enabled') {
         document.body.classList.add('colorblind-mode');
       }
       applyColorblindToggle(colorblindToggle);
       applyColorblindToggle(colorblindToggleMobile);
+      syncAccessibilityToggleStates();
 
       // --- LÓGICA DE TAMANHO DA FONTE ---
       const increaseFontBtn = document.getElementById('increase-font');
@@ -126,11 +157,11 @@ document.addEventListener("DOMContentLoaded", function() {
 
       if (increaseFontBtn || increaseFontBtnMobile) {
         const initialFontSize = 16;
-        let currentFontSize = parseFloat(localStorage.getItem('fontSize')) || initialFontSize;
+        let currentFontSize = parseFloat(safeGetItem('fontSize')) || initialFontSize;
 
         const applyFontSize = () => {
           rootElement.style.fontSize = currentFontSize + 'px';
-          localStorage.setItem('fontSize', currentFontSize);
+          safeSetItem('fontSize', currentFontSize);
         }
         applyFontSize();
 
@@ -196,19 +227,16 @@ document.addEventListener("DOMContentLoaded", function() {
 
       // --- EFEITO DE SCROLL NA NAVBAR ---
       const header = document.querySelector('header');
-      let lastScroll = 0;
       
-      window.addEventListener('scroll', () => {
-        const currentScroll = window.pageYOffset;
-        
-        if (currentScroll > 100) {
-          header.classList.add('scrolled');
-        } else {
-          header.classList.remove('scrolled');
-        }
-        
-        lastScroll = currentScroll;
-      });
+      if (header) {
+        window.addEventListener('scroll', () => {
+          if (window.pageYOffset > 100) {
+            header.classList.add('scrolled');
+          } else {
+            header.classList.remove('scrolled');
+          }
+        });
+      }
 
       // --- ANIMAÇÕES DE SCROLL (Intersection Observer) ---
       const observerOptions = {
@@ -229,20 +257,6 @@ document.addEventListener("DOMContentLoaded", function() {
       const animatedElements = document.querySelectorAll('.card, .intro, .profile-card, .skill, .timeline-item');
       animatedElements.forEach(el => observer.observe(el));
 
-      // --- LAZY LOADING DE IMAGENS ---
-      const images = document.querySelectorAll('img[data-src]');
-      const imageObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            const img = entry.target;
-            img.src = img.dataset.src;
-            img.removeAttribute('data-src');
-            imageObserver.unobserve(img);
-          }
-        });
-      });
-      images.forEach(img => imageObserver.observe(img));
-
       // --- LÓGICA DE MARCAR O LINK DA PÁGINA ATIVA ---
       const currentPage = window.location.pathname.split('/').pop() || 'index.html';
       const navLinks = document.querySelectorAll('.desktop-nav a, .mobile-nav a');
@@ -253,6 +267,15 @@ document.addEventListener("DOMContentLoaded", function() {
           link.classList.add('active');
         }
       });
+
+  // --- TOGGLE VLIBRAS (Ocultar/Mostrar) ---
+  [toggleVlibras, toggleVlibrasMobile].forEach(function(btn) {
+    if (!btn) return;
+    btn.addEventListener('click', function() {
+      document.body.classList.toggle('hide-vlibras');
+      syncAccessibilityToggleStates();
+    });
+  });
 
   // --- BOTÃO GLOBAL: VOLTAR AO TOPO ---
   const backToTopButton = document.createElement('button');
