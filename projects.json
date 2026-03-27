@@ -1,0 +1,130 @@
+[
+  {
+    "id": "portfolio-profissional",
+    "title": "Portfolio Profissional",
+    "featuredLabel": "Experiencia web premium",
+    "category": "Frontend premium",
+    "accentLabel": "UX, motion e acessibilidade",
+    "cardDescription": "Aplicacao web com identidade visual moderna, efeitos de scroll e foco em UX acessivel.",
+    "modalSummary": "Aplicacao web para apresentar experiencia, habilidades e projetos com foco em performance, navegacao fluida e acessibilidade.",
+    "modalChallenge": "Desafio principal: equilibrar identidade visual forte com carregamento rapido e componentes reutilizaveis.",
+    "repoLink": "https://github.com/GuilhermeOliveira0/portfolio",
+    "deployLink": "https://guilhermeoliveira0.github.io/portfolio/",
+    "deployLabel": "Ver deploy",
+    "mediaClass": "project-card-media--portfolio",
+    "stack": [
+      {
+        "label": "HTML5",
+        "tooltip": "Estrutura semantica"
+      },
+      {
+        "label": "CSS3",
+        "tooltip": "Animacoes e layout"
+      },
+      {
+        "label": "JavaScript",
+        "tooltip": "Interacoes e logica"
+      },
+      {
+        "label": "Formspree",
+        "tooltip": "Integracao do formulario"
+      }
+    ]
+  },
+  {
+    "id": "agronutri-precision",
+    "title": "AgroNutri Precision",
+    "featuredLabel": "Dashboard operacional",
+    "category": "Dashboard analitico",
+    "accentLabel": "Dados operacionais e UI modular",
+    "cardDescription": "Gestao de indicadores zootecnicos com navegacao clara e componentes reutilizaveis.",
+    "modalSummary": "Sistema de gestao pecuaria com dashboard para acompanhamento de indicadores e tomada de decisao operacional.",
+    "modalChallenge": "Desafio principal: organizar dados tecnicos em uma interface objetiva e responsiva para uso diario.",
+    "repoLink": "https://github.com/GuilhermeOliveira0/-agroNutri",
+    "deployLink": "",
+    "deployLabel": "Ver deploy",
+    "mediaClass": "project-card-media--agro",
+    "stack": [
+      {
+        "label": "React",
+        "tooltip": "UI baseada em componentes"
+      },
+      {
+        "label": "Tailwind",
+        "tooltip": "Estilizacao utilitaria"
+      },
+      {
+        "label": "Vite",
+        "tooltip": "Build performatico"
+      },
+      {
+        "label": "Componentizacao",
+        "tooltip": "Escalabilidade de interface"
+      }
+    ]
+  },
+  {
+    "id": "gerenciador-matriculas",
+    "title": "Gerenciador de Matriculas",
+    "featuredLabel": "API e regras de negocio",
+    "category": "API academica",
+    "accentLabel": "Back-end, validacao e SQL",
+    "cardDescription": "API para operacoes academicas com validacoes, regras de negocio e organizacao modular.",
+    "modalSummary": "Back-end para controle de alunos e matriculas com validacoes de regras de negocio e persistencia estruturada.",
+    "modalChallenge": "Desafio principal: garantir consistencia de dados em fluxos administrativos com diferentes regras por etapa.",
+    "repoLink": "https://github.com/GuilhermeOliveira0/projeto-gerenciador-matriculas",
+    "deployLink": "",
+    "deployLabel": "Ver deploy",
+    "mediaClass": "project-card-media--matriculas",
+    "stack": [
+      {
+        "label": "C#",
+        "tooltip": "Linguagem principal"
+      },
+      {
+        "label": ".NET",
+        "tooltip": "Ecossistema backend"
+      },
+      {
+        "label": "SQL",
+        "tooltip": "Persistencia relacional"
+      },
+      {
+        "label": "Arquitetura em camadas",
+        "tooltip": "Organizacao de responsabilidades"
+      }
+    ]
+  },
+  {
+    "id": "projeto-integrador-fatec",
+    "title": "Projeto Integrador - Fatec",
+    "featuredLabel": "Entrega colaborativa",
+    "category": "Entrega colaborativa",
+    "accentLabel": "Planejamento agil e colaboracao",
+    "cardDescription": "Execucao colaborativa com foco em documentacao, entrega continua e comunicacao tecnica.",
+    "modalSummary": "Projeto academico em equipe com foco em levantamento de requisitos, sprints e entrega incremental.",
+    "modalChallenge": "Desafio principal: alinhar planejamento tecnico, escopo e colaboracao entre diferentes frentes do time.",
+    "repoLink": "https://github.com/Fatec-ADS-AMS2025",
+    "deployLink": "",
+    "deployLabel": "Ver deploy",
+    "mediaClass": "project-card-media--fatec",
+    "stack": [
+      {
+        "label": "Agil",
+        "tooltip": "Organizacao em sprints"
+      },
+      {
+        "label": "GitHub",
+        "tooltip": "Versionamento colaborativo"
+      },
+      {
+        "label": "Colaboracao",
+        "tooltip": "Execucao em equipe"
+      },
+      {
+        "label": "Scrum",
+        "tooltip": "Ritos e acompanhamento"
+      }
+    ]
+  }
+]

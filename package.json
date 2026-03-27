@@ -1,0 +1,20 @@
+{
+  "name": "portfolio-guilherme",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "lint": "eslint \"js/**/*.js\"",
+    "format:check": "prettier --check \"**/*.{html,css,js,json,md}\"",
+    "test:smoke": "playwright test",
+    "test:smoke:headed": "playwright test --headed"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.19.0",
+    "@playwright/test": "^1.58.2",
+    "eslint": "^9.19.0",
+    "globals": "^15.14.0",
+    "http-server": "^14.1.1",
+    "prettier": "^3.4.2"
+  }
+}

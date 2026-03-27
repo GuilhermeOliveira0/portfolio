@@ -5,7 +5,6 @@
     "titulo": "Engenharia de Software",
     "descricao": "Modelagem de sistemas, diagramas UML e boas práticas de desenvolvimento.",
     "icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M2 20h20'/><path d='M2 20V6l4-4 4 4 4-4 4 4 4-4v14'/><circle cx='6' cy='14' r='1'/><circle cx='12' cy='10' r='1'/><circle cx='18' cy='14' r='1'/></svg>",
-    "iconBg": "linear-gradient(135deg, #5B3FD1 0%, #8B2BAE 100%)",
     "resumo": "A Engenharia de Software envolve os princípios e práticas voltadas para o desenvolvimento e manutenção de sistemas de software de alta qualidade. Abrange o estudo de metodologias como o modelo cascata, abordagens ágeis e DevOps. Atua em todas as etapas do ciclo de vida do software - desde a análise de requisitos, passando pelo projeto, codificação, testes, até a manutenção. Dá ênfase à gestão de projetos, garantindo que o software seja entregue dentro dos prazos e orçamentos estipulados.",
     "professor": "JEFFERSON ANTONIO RIBEIRO PASSERINI",
     "conteudo": [
@@ -27,13 +26,23 @@
     "titulo": "Estrutura de Dados",
     "descricao": "Estudo de pilhas, filas, listas, árvores e grafos para otimização de algoritmos.",
     "icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='5' r='3'/><path d='M12 8v4'/><path d='M8 12h8'/><circle cx='8' cy='16' r='2'/><circle cx='16' cy='16' r='2'/><path d='M8 18v2'/><path d='M16 18v2'/><line x1='6' y1='20' x2='10' y2='20'/><line x1='14' y1='20' x2='18' y2='20'/></svg>",
-    "iconBg": "linear-gradient(135deg, #D91E85 0%, #C2185B 100%)",
     "resumo": "A matéria de Estruturas de Dados é fundamental na ciência da computação, focando no estudo e implementação de formas eficientes de organizar e armazenar dados. Inclui o entendimento de estruturas como arrays, listas ligadas, pilhas, filas, árvores e grafos, cada uma adequada para diferentes tipos de operações e aplicações. A eficiência dessas estruturas impacta diretamente o desempenho dos algoritmos, sendo crucial para a resolução de problemas complexos e otimização de recursos em sistemas de software.",
     "professor": "WILLIAN GUIMARAES BORGES",
     "conteudo": [
-      "Revisão de tipos de dados", "Estruturas condicionais", "Laços de repetição", "Funções", "Ponteiros",
-      "Vetores (matriz 1D)", "Matrizes 2D", "Struct", "Lista encadeada", "Pilha e Fila",
-      "Fila com prioridade", "Fila com vetor", "Listas duplamente encadeadas", "Fila circular",
+      "Revisão de tipos de dados",
+      "Estruturas condicionais",
+      "Laços de repetição",
+      "Funções",
+      "Ponteiros",
+      "Vetores (matriz 1D)",
+      "Matrizes 2D",
+      "Struct",
+      "Lista encadeada",
+      "Pilha e Fila",
+      "Fila com prioridade",
+      "Fila com vetor",
+      "Listas duplamente encadeadas",
+      "Fila circular",
       "Lista duplamente encadeada circular"
     ],
     "projeto": {
@@ -47,12 +56,16 @@
     "titulo": "Técnicas Avançadas de Banco de Dados Relacional e Não Relacional",
     "descricao": "Modelagem, normalização, SQL avançado e conceitos de NoSQL.",
     "icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><ellipse cx='12' cy='5' rx='9' ry='3'/><path d='M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5'/><path d='M3 12c0 1.66 4 3 9 3s9-1.34 9-3'/></svg>",
-    "iconBg": "linear-gradient(135deg, #1565C0 0%, #0277BD 100%)",
     "resumo": "A matéria de Estruturas de Dados é fundamental na ciência da computação, focando no estudo e implementação de formas eficientes de organizar e armazenar dados. Inclui o entendimento de estruturas como arrays, listas ligadas, pilhas, filas, árvores e grafos, cada uma adequada para diferentes tipos de operações e aplicações. A eficiência dessas estruturas impacta diretamente o desempenho dos algoritmos, sendo crucial para a resolução de problemas complexos e otimização de recursos em sistemas de software.",
     "professor": "Alexandre Aparecido Bernardes",
     "conteudo": [
-      "Apresentação do SSMS e revisão de comandos DDL", "Tipos de junções e tabelas", "Subconsultas e views",
-      "Visões avançadas", "Stored Procedures", "Functions", "DCL (Data Control Language)"
+      "Apresentação do SSMS e revisão de comandos DDL",
+      "Tipos de junções e tabelas",
+      "Subconsultas e views",
+      "Visões avançadas",
+      "Stored Procedures",
+      "Functions",
+      "DCL (Data Control Language)"
     ],
     "projeto": {
       "titulo": "Criação de um banco de dados completo para um sistema de e-commerce.",
@@ -65,13 +78,18 @@
     "titulo": "Matemática Discreta",
     "descricao": "Lógica, teoria dos conjuntos, relações e grafos aplicados à computação.",
     "icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M3 3l18 18'/><path d='M14.5 9.5l-5 5'/><circle cx='18' cy='6' r='3'/><circle cx='6' cy='18' r='3'/><path d='M8 8l3-3'/><path d='M13 16l3 3'/><path d='M10 2v4'/><path d='M2 10h4'/></svg>",
-    "iconBg": "linear-gradient(135deg, #E53935 0%, #D84315 100%)",
     "resumo": "Matemática Discreta abrange os fundamentos teóricos essenciais para a computação, incluindo lógica, teoria dos conjuntos, grafos, combinatória e álgebra. Estuda-se proposições, quantificadores, provas, indução matemática e estruturas algébricas. Foca na resolução de problemas e modelagem de algoritmos, fornecendo a base para a análise e design de sistemas complexos.",
     "professor": "Evanivaldo Castro Suiva Júnior",
     "conteudo": [
-      "Lógica booleana e operações", "Relação de equivalência", "Introdução à teoria de conjuntos",
-      "Teoria de conjuntos", "Operações", "Intervalos numéricos", "Introdução à análise combinatória",
-      "Introdução à teoria de grafos", "Grafos e árvores"
+      "Lógica booleana e operações",
+      "Relação de equivalência",
+      "Introdução à teoria de conjuntos",
+      "Teoria de conjuntos",
+      "Operações",
+      "Intervalos numéricos",
+      "Introdução à análise combinatória",
+      "Introdução à teoria de grafos",
+      "Grafos e árvores"
     ],
     "projeto": null
   },
@@ -81,7 +99,6 @@
     "titulo": "Interação Humano-Computador",
     "descricao": "Princípios de usabilidade, design de interfaces e experiência do usuário (UX).",
     "icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M12 2a3 3 0 0 0-3 3v4a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z'/><path d='M19 10v2a7 7 0 0 1-14 0v-2'/><line x1='12' y1='19' x2='12' y2='22'/><path d='M8 22h8'/><rect x='2' y='10' width='4' height='8' rx='1'/><rect x='18' y='10' width='4' height='8' rx='1'/></svg>",
-    "iconBg": "linear-gradient(135deg, #00897B 0%, #00695C 100%)",
     "resumo": "A disciplina de Interação Humano-Computador estuda como projetar interfaces digitais mais intuitivas, acessíveis e eficientes, com foco na experiência do usuário. São aplicados princípios de usabilidade, arquitetura da informação, prototipação e testes com usuários para validar soluções centradas nas pessoas.",
     "professor": "Ligia Rodrigues Prete",
     "conteudo": [
@@ -102,15 +119,23 @@
     "titulo": "Língua Inglesa I",
     "descricao": "Inglês técnico para leitura e escrita na área de tecnologia da informação.",
     "icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='10'/><line x1='2' y1='12' x2='22' y2='12'/><path d='M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z'/></svg>",
-    "iconBg": "linear-gradient(135deg, #F57C00 0%, #E65100 100%)",
     "resumo": "A matéria de Inglês é essencialmente um estudo abrangente da língua inglesa, com foco na compreensão e comunicação eficaz em todas as suas formas. Desde as habilidades básicas de conversação até a proficiência avançada, a disciplina engloba diversos aspectos linguísticos, culturais e comunicativos.",
     "professor": "Carlos Alberto",
     "conteudo": [
-      "First greetings", "The IPA", "The use of my, your, his and her", "Introducing another person",
-      "Oral activities based on To be", "The verb be. The uses and meaning of the verb",
-      "Numbers and saying goodbye", "English Test 1", "English Paper 1 - Steven Paul Jobs",
-      "Devolutiva da Prova 1 e do Trabalho 1", "What is this?", "Objects in the classroom, and the Definite article",
-      "Yes No q and Wh questions with be", "Prepositions of place: in, on, under, next to, between, behind",
+      "First greetings",
+      "The IPA",
+      "The use of my, your, his and her",
+      "Introducing another person",
+      "Oral activities based on To be",
+      "The verb be. The uses and meaning of the verb",
+      "Numbers and saying goodbye",
+      "English Test 1",
+      "English Paper 1 - Steven Paul Jobs",
+      "Devolutiva da Prova 1 e do Trabalho 1",
+      "What is this?",
+      "Objects in the classroom, and the Definite article",
+      "Yes No q and Wh questions with be",
+      "Prepositions of place: in, on, under, next to, between, behind",
       "Where is Kevin's things"
     ],
     "projeto": null
@@ -121,7 +146,6 @@
     "titulo": "Programação Web e Mobile",
     "descricao": "Desenvolvimento de aplicações responsivas e PWA (Progressive Web Apps).",
     "icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='5' y='2' width='14' height='20' rx='2' ry='2'/><line x1='12' y1='18' x2='12.01' y2='18'/></svg>",
-    "iconBg": "linear-gradient(135deg, #AD1457 0%, #880E4F 100%)",
     "professor": "A ser definido",
     "conteudo": ["Tópicos avançados de front-end", "Desenvolvimento de aplicações mobile"],
     "projeto": null
@@ -132,13 +156,20 @@
     "titulo": "Organização de Computadores e Sistemas Operacionais",
     "descricao": "Gerenciamento de processos, memória, arquivos e concorrência.",
     "icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='3'/><path d='M12 1v6m0 6v6M5.6 5.6l4.2 4.2m4.2 4.2l4.2 4.2M1 12h6m6 0h6M5.6 18.4l4.2-4.2m4.2-4.2l4.2-4.2'/></svg>",
-    "iconBg": "linear-gradient(135deg, #283593 0%, #1A237E 100%)",
     "resumo": "A matéria de Estruturas de Dados é fundamental na ciência da computação, focando no estudo e implementação de formas eficientes de organizar e armazenar dados. Inclui o entendimento de estruturas como arrays, listas ligadas, pilhas, filas, árvores e grafos, cada uma adequada para diferentes tipos de operações e aplicações.",
     "professor": "Wellington Luis Codinhoto Garcia",
     "conteudo": [
-      "Estrutura de um computador", "Memória e seus níveis", "Memória volátil e não voláteis", "Funcionamento das memórias",
-      "ROM", "RAM", "Caches e registradores", "Unidade Aritmética e Lógica (UAL)", "Unidade de Controle",
-      "Registradores", "Trabalho sobre o CPU"
+      "Estrutura de um computador",
+      "Memória e seus níveis",
+      "Memória volátil e não voláteis",
+      "Funcionamento das memórias",
+      "ROM",
+      "RAM",
+      "Caches e registradores",
+      "Unidade Aritmética e Lógica (UAL)",
+      "Unidade de Controle",
+      "Registradores",
+      "Trabalho sobre o CPU"
     ],
     "projeto": null
   },
@@ -148,13 +179,17 @@
     "titulo": "Gestão Ágil de Projetos de Software",
     "descricao": "Aplicação de metodologias ágeis como Scrum e Kanban no ciclo de vida do software.",
     "icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M12 2L2 7l10 5 10-5-10-5z'/><path d='M2 17l10 5 10-5M2 12l10 5 10-5'/><path d='M16 12l-4 8'/></svg>",
-    "iconBg": "linear-gradient(135deg, #F57F17 0%, #E65100 100%)",
     "resumo": "A gestão Ágil de Projetos de Software aplica princípios e práticas ágeis para entregar software de alta qualidade de forma rápida e eficiente. Utiliza metodologias como Scrum, Kanban e XP, que valorizam a colaboração, feedback contínuo e entregas incrementais.",
     "professor": "André Zagato Gomes",
     "conteudo": [
-      "Scrum", "Dinâmica Scrum (revisão de massinha)", "Comparação: gerenciamento tradicional vs Metodologia ágil",
-      "Revisão dos conceitos básicos", "Origem e valores do Manifesto Ágil", "Os 12 princípios do Manifesto Ágil",
-      "Principais autores, atividades e artefatos", "Metodologia XP (Extreme Programming)",
+      "Scrum",
+      "Dinâmica Scrum (revisão de massinha)",
+      "Comparação: gerenciamento tradicional vs Metodologia ágil",
+      "Revisão dos conceitos básicos",
+      "Origem e valores do Manifesto Ágil",
+      "Os 12 princípios do Manifesto Ágil",
+      "Principais autores, atividades e artefatos",
+      "Metodologia XP (Extreme Programming)",
       "Gamificação com Kahoot (Scrum e XP)"
     ],
     "projeto": null
@@ -165,12 +200,15 @@
     "titulo": "Técnicas Avançadas de Programação",
     "descricao": "Padrões de projeto, programação concorrente e tópicos avançados em C#.",
     "icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polyline points='16 18 22 12 16 6'/><polyline points='8 6 2 12 8 18'/></svg>",
-    "iconBg": "linear-gradient(135deg, #6A1B9A 0%, #4A148C 100%)",
     "resumo": "A matéria de Estruturas de Dados é fundamental na ciência da computação, focando no estudo e implementação de formas eficientes de organizar e armazenar dados. Inclui o entendimento de estruturas como arrays, listas ligadas, pilhas, filas, árvores e grafos, cada uma adequada para diferentes tipos de operações e aplicações.",
     "professor": "Wellington Luis Codinhoto Garcia",
     "conteudo": [
-      "Introdução ao .NET", "Conceitos básicos de C#", "Laços e repetições em C#",
-      "Vetores e matrizes em C#", "CRUD com .NET", "Noções de Bootstrap"
+      "Introdução ao .NET",
+      "Conceitos básicos de C#",
+      "Laços e repetições em C#",
+      "Vetores e matrizes em C#",
+      "CRUD com .NET",
+      "Noções de Bootstrap"
     ],
     "projeto": {
       "titulo": "Acesse",
@@ -183,14 +221,23 @@
     "titulo": "Inteligência Corporativa e Modelos de Negócios na Era Digital",
     "descricao": "Business Intelligence, Data Warehousing e modelagem de negócios digitais.",
     "icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z'/><polyline points='7.5 4.21 12 6.81 16.5 4.21'/><polyline points='7.5 19.79 7.5 14.6 3 12'/><polyline points='21 12 16.5 14.6 16.5 19.79'/><polyline points='3.27 6.96 12 12.01 20.73 6.96'/><line x1='12' y1='22.08' x2='12' y2='12'/></svg>",
-    "iconBg": "linear-gradient(135deg, #0097A7 0%, #006064 100%)",
     "resumo": "A matéria de Estruturas de Dados é fundamental na ciência da computação, focando no estudo e implementação de formas eficientes de organizar e armazenar dados. Inclui o entendimento de estruturas como arrays, listas ligadas, pilhas, filas, árvores e grafos, cada uma adequada para diferentes tipos de operações e aplicações.",
     "professor": "Marinalva da Silva Tolpo Boldrin",
     "conteudo": [
-      "Introdução à inovação", "As 6 etapas do processo de inovação", "Novos negócios apoiados por TI",
-      "Inteligência corporativa", "Benefícios", "Ciclo", "Exemplos", "Aplicação prática", "Negócios escaláveis e sustentáveis",
-      "Modelos de negócios tradicionais", "Aplicação e novos modelos na análise e elaboração de negócios competitivos",
-      "Alinhamento estratégico de TI", "Ativos intangíveis e capital intelectual", "Gestão do conhecimento"
+      "Introdução à inovação",
+      "As 6 etapas do processo de inovação",
+      "Novos negócios apoiados por TI",
+      "Inteligência corporativa",
+      "Benefícios",
+      "Ciclo",
+      "Exemplos",
+      "Aplicação prática",
+      "Negócios escaláveis e sustentáveis",
+      "Modelos de negócios tradicionais",
+      "Aplicação e novos modelos na análise e elaboração de negócios competitivos",
+      "Alinhamento estratégico de TI",
+      "Ativos intangíveis e capital intelectual",
+      "Gestão do conhecimento"
     ],
     "projeto": null
   },
@@ -200,14 +247,9 @@
     "titulo": "Projeto Integrador",
     "descricao": "Desenvolvimento de um projeto prático aplicando conhecimentos do semestre.",
     "icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='10'/><circle cx='12' cy='12' r='6'/><circle cx='12' cy='12' r='2'/></svg>",
-    "iconBg": "linear-gradient(135deg, #388E3C 0%, #1B5E20 100%)",
     "resumo": "Nesta matéria, trabalhamos em um projeto de extensão com o objetivo de prestar um serviço por meio de um sistema: o SIGEDESP (Sistema de Gerenciamento de Despesas da Prefeitura de Jales). O sistema foi desenvolvido para aprimorar o processo de controle financeiro, organizando o cadastro de despesas e facilitando o acompanhamento de orçamentos e pagamentos. Através de painéis de controle, é possível visualizar as informações de maneira clara e simples dos gastos e os setores que mais consomem recursos públicos, promovendo uma gestão mais eficiente e transparente. Além disso, estou trabalhando no GranjaTech, um sistema de monitoramento ambiental para granjas.",
     "professor": "JEFFERSON ANTONIO RIBEIRO PASSERINI",
-    "conteudo": [
-      "Projeto integrador interdisciplinar",
-      "Curso git",
-      "GitHub"
-    ],
+    "conteudo": ["Projeto integrador interdisciplinar", "Curso git", "GitHub"],
     "projeto": {
       "titulo": "Acesse os projetos",
       "link": "#"
@@ -219,7 +261,6 @@
     "titulo": "Business Intelligence e Big Data",
     "descricao": "Coleta, processamento e análise de grandes volumes de dados para suporte à tomada de decisão estratégica e geração de insights para negócios.",
     "icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M21 12V7H5a2 2 0 0 1 0-4h14v4'/><path d='M3 5v14a2 2 0 0 0 2 2h16v-5'/><path d='M18 12a2 2 0 0 0 0 4h4v-4z'/></svg>",
-    "iconBg": "linear-gradient(135deg, #0284c7 0%, #0e4a6e 100%)",
     "resumo": "A disciplina de Business Intelligence e Big Data aborda técnicas e ferramentas para a coleta, armazenamento, processamento e análise de grandes volumes de dados. Estuda-se a construção de Data Warehouses, processos ETL, modelagem dimensional e criação de dashboards interativos, com foco na aplicação prática para transformar dados brutos em informações estratégicas que apoiam a tomada de decisão nas organizações.",
     "professor": "Alexandre Aparecido Bernardes",
     "conteudo": [
@@ -237,7 +278,6 @@
     "titulo": "Estatística Aplicada",
     "descricao": "Aplicação de conceitos estatísticos na análise de dados, probabilidade e métodos quantitativos para a resolução de problemas em tecnologia.",
     "icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><line x1='18' y1='20' x2='18' y2='10'/><line x1='12' y1='20' x2='12' y2='4'/><line x1='6' y1='20' x2='6' y2='14'/><line x1='2' y1='20' x2='22' y2='20'/></svg>",
-    "iconBg": "linear-gradient(135deg, #059669 0%, #065f46 100%)",
     "resumo": "Estatística Aplicada fornece as ferramentas quantitativas essenciais para a análise e interpretação de dados no contexto tecnológico. A disciplina abrange desde conceitos fundamentais de estatística descritiva até inferência estatística, probabilidade, distribuições, testes de hipóteses e regressão, preparando o aluno para aplicar métodos estatísticos sólidos na resolução de problemas reais e na análise de dados.",
     "professor": "Andrea Piranhe da Silva",
     "conteudo": [
@@ -255,7 +295,6 @@
     "titulo": "Projeto Integrador II",
     "descricao": "Desenvolvimento prático do sistema Civitas, um projeto de software em equipa voltado para a gestão da Prefeitura de Jales, aplicando e integrando as tecnologias estudadas durante o semestre.",
     "icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M2 20h20'/><path d='M5 20V8l7-5 7 5v12'/><path d='M9 20v-6h6v6'/><line x1='12' y1='8' x2='12' y2='12'/><line x1='10' y1='10' x2='14' y2='10'/></svg>",
-    "iconBg": "linear-gradient(135deg, #16a34a 0%, #15803d 100%)",
     "resumo": "O Projeto Integrador II é uma disciplina prática e colaborativa onde se desenvolve o sistema Civitas — uma plataforma de software voltada para a gestão administrativa da Prefeitura de Jales. O projeto integra as tecnologias e metodologias estudadas ao longo do semestre, como DevOps, design patterns e programação multiplataforma, simulando um ambiente real de desenvolvimento em equipa.",
     "professor": "Jefferson Antonio Ribeiro Passerini",
     "conteudo": [
@@ -276,7 +315,6 @@
     "titulo": "Sistemas Distribuídos Aplicado à Internet das Coisas",
     "descricao": "Estudo de arquiteturas de sistemas distribuídos e protocolos de comunicação entre dispositivos no contexto de IoT (Internet of Things).",
     "icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='2'/><path d='M16.24 7.76a6 6 0 0 1 0 8.49'/><path d='M7.76 16.24a6 6 0 0 1 0-8.49'/><path d='M19.07 4.93a10 10 0 0 1 0 14.14'/><path d='M4.93 19.07a10 10 0 0 1 0-14.14'/></svg>",
-    "iconBg": "linear-gradient(135deg, #0891b2 0%, #155e75 100%)",
     "resumo": "A disciplina explora os fundamentos de sistemas distribuídos aplicados ao universo da Internet das Coisas (IoT). Abrange arquiteturas distribuídas, protocolos de comunicação (MQTT, CoAP, HTTP), middleware para IoT, processamento de dados em tempo real e computação de borda (edge computing), capacitando o aluno a projetar e implementar soluções conectadas escaláveis.",
     "professor": "Ligia Rodrigues Prete",
     "conteudo": [
@@ -294,7 +332,6 @@
     "titulo": "Integração e Entrega Contínua (DevOps)",
     "descricao": "Práticas e ferramentas de CI/CD, focando na automação de testes, integração de código e deploy contínuo de aplicações.",
     "icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polyline points='23 4 23 10 17 10'/><polyline points='1 20 1 14 7 14'/><path d='M3.51 9a9 9 0 0 1 14.85-3.36L23 10'/><path d='M20.49 15a9 9 0 0 1-14.85 3.36L1 14'/></svg>",
-    "iconBg": "linear-gradient(135deg, #7c3aed 0%, #4c1d95 100%)",
     "resumo": "A disciplina de Integração e Entrega Contínua (DevOps) aborda a cultura, práticas e ferramentas que permitem a automação do ciclo de vida do software. Estuda-se a criação de pipelines de CI/CD, automação de builds e testes, containerização com Docker, orquestração com Kubernetes, infraestrutura como código e monitoramento, com foco em acelerar entregas com qualidade e confiabilidade.",
     "professor": "Alexandre Aparecido Bernardes",
     "conteudo": [
@@ -312,7 +349,6 @@
     "titulo": "Inteligência Artificial e Aprendizagem de Máquina",
     "descricao": "Fundamentos de IA, algoritmos de machine learning, modelos preditivos e aplicações práticas na resolução de problemas complexos.",
     "icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M12 2a4 4 0 0 1 4 4c0 1.1-.9 2-2 2h-4a2 2 0 0 1-2-2 4 4 0 0 1 4-4z'/><path d='M8 8v4a4 4 0 0 0 8 0V8'/><path d='M12 16v6'/><path d='M8 22h8'/><circle cx='9' cy='6' r='0.5'/><circle cx='15' cy='6' r='0.5'/></svg>",
-    "iconBg": "linear-gradient(135deg, #ec4899 0%, #9d174d 100%)",
     "resumo": "A disciplina introduz os fundamentos da Inteligência Artificial e do Aprendizado de Máquina (Machine Learning). Abrange conceitos como aprendizado supervisionado e não supervisionado, redes neurais, processamento de linguagem natural, visão computacional e ética em IA, preparando o aluno para desenvolver e aplicar modelos inteligentes a problemas reais.",
     "professor": "André Zagato Gomes",
     "conteudo": [
@@ -330,7 +366,6 @@
     "titulo": "Modelagem de Padrões de Projetos",
     "descricao": "Estudo e aplicação prática de Design Patterns (padrões criacionais, estruturais e comportamentais) na arquitetura de software avançada.",
     "icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='3' y='3' width='7' height='7'/><rect x='14' y='3' width='7' height='7'/><rect x='3' y='14' width='7' height='7'/><path d='M14 17.5h7'/><path d='M17.5 14v7'/></svg>",
-    "iconBg": "linear-gradient(135deg, #f59e0b 0%, #b45309 100%)",
     "resumo": "A disciplina de Modelagem de Padrões de Projetos estuda os Design Patterns catalogados pelo Gang of Four (GoF) e outros padrões amplamente utilizados na indústria. Abordam-se os padrões criacionais (Singleton, Factory, Builder), estruturais (Adapter, Decorator, Facade) e comportamentais (Observer, Strategy, Command), com foco na aplicação prática para criar arquiteturas de software flexíveis, reutilizáveis e de fácil manutenção.",
     "professor": "Jefferson Antonio Ribeiro Passerini",
     "conteudo": [
@@ -348,7 +383,6 @@
     "titulo": "Segurança e Defesa Cibernética",
     "descricao": "Princípios de segurança da informação, criptografia, proteção de infraestruturas de rede e mitigação de vulnerabilidades em sistemas.",
     "icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z'/><path d='M9 12l2 2 4-4'/></svg>",
-    "iconBg": "linear-gradient(135deg, #dc2626 0%, #7f1d1d 100%)",
     "resumo": "A disciplina de Segurança e Defesa Cibernética aborda os princípios, técnicas e ferramentas essenciais para a proteção de sistemas e infraestruturas digitais. Estuda-se criptografia simétrica e assimétrica, análise de vulnerabilidades, testes de penetração (pentest), segurança em redes, normas e regulamentações (LGPD, ISO 27001) e estratégias de resposta a incidentes de segurança.",
     "professor": "Rogério Leão Santos de Oliveira",
     "conteudo": [
@@ -366,7 +400,6 @@
     "titulo": "Sistema de Informação e Tecnologias Emergentes",
     "descricao": "Análise do papel dos sistemas de informação nas organizações e o impacto de novas tendências tecnológicas no mercado atual.",
     "icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z'/><path d='M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z'/></svg>",
-    "iconBg": "linear-gradient(135deg, #6366f1 0%, #3730a3 100%)",
     "resumo": "Esta disciplina analisa o papel estratégico dos Sistemas de Informação (SI) nas organizações modernas e explora o impacto de tecnologias emergentes como Blockchain, Metaverso, 5G, Computação Quântica e Web3 no mercado e na sociedade. O aluno desenvolve visão crítica sobre como essas tendências estão remodelando modelos de negócios e criando novas oportunidades.",
     "professor": "Fabiana Pupin Masson Caravieri",
     "conteudo": [
@@ -384,7 +417,6 @@
     "titulo": "Programação Multiplataforma",
     "descricao": "Desenvolvimento e arquitetura de aplicações capazes de rodar em diferentes sistemas operativos e dispositivos utilizando frameworks modernos.",
     "icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='2' y='3' width='20' height='14' rx='2' ry='2'/><line x1='8' y1='21' x2='16' y2='21'/><line x1='12' y1='17' x2='12' y2='21'/></svg>",
-    "iconBg": "linear-gradient(135deg, #0ea5e9 0%, #0369a1 100%)",
     "resumo": "A disciplina de Programação Multiplataforma capacita o aluno a desenvolver aplicações que funcionam de forma nativa ou híbrida em diferentes plataformas (Web, Desktop, Mobile). Utiliza-se frameworks modernos como .NET MAUI, React Native ou Flutter para criar interfaces responsivas e performáticas, com foco na reutilização de código e na experiência do utilizador em múltiplos dispositivos.",
     "professor": "Welington Luis Codinhoto Garcia",
     "conteudo": [
@@ -402,7 +434,6 @@
     "titulo": "Computação em Nuvem",
     "descricao": "Estudo da arquitetura de serviços em nuvem (IaaS, PaaS, SaaS), virtualização e implantação de soluções escaláveis em provedores cloud.",
     "icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z'/></svg>",
-    "iconBg": "linear-gradient(135deg, #38bdf8 0%, #1e40af 100%)",
     "resumo": "A disciplina de Computação em Nuvem aborda os fundamentos e práticas de implementação de soluções na nuvem. Estuda-se os modelos de serviço (IaaS, PaaS, SaaS), virtualização, containerização, os principais provedores (AWS, Azure, GCP), segurança em ambientes cloud, arquiteturas serverless e estratégias de escalabilidade e alta disponibilidade.",
     "professor": "Welington Luis Codinhoto Garcia",
     "conteudo": [
@@ -420,7 +451,6 @@
     "titulo": "Língua Inglesa II",
     "descricao": "Aprofundamento prático no inglês técnico voltado para a área de Tecnologia da Informação, com foco em leitura, escrita e comunicação corporativa.",
     "icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='10'/><line x1='2' y1='12' x2='22' y2='12'/><path d='M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z'/></svg>",
-    "iconBg": "linear-gradient(135deg, #f97316 0%, #c2410c 100%)",
     "resumo": "Língua Inglesa II dá continuidade ao desenvolvimento das competências em inglês técnico, aprofundando a leitura e interpretação de documentação técnica, a escrita de e-mails e relatórios profissionais, e a comunicação oral em contextos corporativos e de TI. Prepara o aluno para apresentações, entrevistas e colaboração em equipas internacionais.",
     "professor": "Carlos Alberto Gonçalves da Silva",
     "conteudo": [

@@ -1,193 +1,236 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Grade Curricular da Fatec - Guilherme Henrique</title>
-  <link rel="icon" type="image/png" href="favicon.png">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grade Curricular | Guilherme Henrique</title>
+    <meta
+      name="description"
+      content="Grade curricular da Fatec com disciplinas, resumo, professor e projetos relacionados."
+    />
+    <meta name="author" content="Guilherme Henrique de Oliveira" />
+    <meta property="og:title" content="Grade Curricular | Guilherme Henrique" />
+    <meta property="og:description" content="Visualizacao organizada das disciplinas da Fatec." />
+    <meta property="og:image" content="img/favicon.png?v=20260308" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://guilhermeoliveira0.github.io/portfolio/grade.html" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "Grade Curricular | Guilherme Henrique",
+        "url": "https://guilhermeoliveira0.github.io/portfolio/grade.html",
+        "inLanguage": "pt-BR",
+        "isPartOf": {
+          "@type": "WebSite",
+          "name": "Portfolio de Guilherme Henrique",
+          "url": "https://guilhermeoliveira0.github.io/portfolio/"
+        }
+      }
+    </script>
 
-  <!-- SEO & Open Graph -->
-  <meta name="description" content="Portfólio de Guilherme Henrique, estudante de Análise e Desenvolvimento de Sistemas (FATEC) e Desenvolvedor. Foco em C#, .NET, bancos de dados e eficiência operacional.">
-  <meta name="author" content="Guilherme Henrique de Oliveira">
-  <meta name="keywords" content="Guilherme Henrique, Desenvolvedor Backend, C#, .NET, SQL, Portfólio, ADS, Fatec, Programador, Back Office">
-  <meta property="og:title" content="Portfólio | Guilherme Henrique - Desenvolvedor">
-  <meta property="og:description" content="Portfólio de Guilherme Henrique, estudante de Análise e Desenvolvimento de Sistemas (FATEC) e Desenvolvedor. Foco em C#, .NET, bancos de dados e eficiência operacional.">
-  <meta property="og:image" content="img/perfil.jpg">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://guilhermeoliveira0.github.io/portfolio/">
+    <link rel="icon" type="image/png" href="img/favicon-tab.png?v=20260309" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      (() => {
+        try {
+          const savedTheme = localStorage.getItem('themePreference');
+          if (savedTheme === 'light') {
+            document.documentElement.dataset.theme = 'light';
+          }
+        } catch {
+          // Storage indisponivel.
+        }
+      })();
+    </script>
+    <link rel="stylesheet" href="style.css?v=31" />
+    <link rel="stylesheet" href="css/grade.css?v=31" />
+  </head>
+  <body data-page="grade">
+    <a class="skip-link" href="#main-content">Pular para o conteudo principal</a>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <header class="site-header" id="top">
+      <div class="container nav-container">
+        <a class="brand" href="index.html#inicio" aria-label="Voltar ao inicio">
+          <span class="brand-logo-shell" aria-hidden="true">
+            <img src="img/favicon.png?v=20260308" alt="" class="brand-logo" width="1536" height="1024" />
+          </span>
+          <span class="brand-text">
+            <strong>Guilherme Henrique</strong>
+            <small>Desenvolvedor de Software</small>
+          </span>
+        </a>
 
-  <link rel="stylesheet" href="style.css?v=13">
-</head>
-<body>
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="site-nav"
+          aria-haspopup="true"
+          aria-label="Abrir menu"
+        >
+          <span></span>
+          <span></span>
+        </button>
 
-  <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
+        <nav class="site-nav" id="site-nav" aria-label="Navegacao principal">
+          <div class="site-nav__mobile-head" aria-hidden="true">
+            <span class="site-nav__mobile-eyebrow">Menu</span>
+            <strong>Explore o portfolio</strong>
+            <p>Links principais, grade curricular e ajustes rapidos em um layout otimizado para toque.</p>
+          </div>
+          <div class="site-nav__links">
+            <a class="nav-link" href="index.html#inicio">Inicio</a>
+            <a class="nav-link" href="index.html#sobre">Sobre</a>
+            <a class="nav-link" href="index.html#habilidades">Habilidades</a>
+            <a class="nav-link" href="index.html#projetos">Projetos</a>
+            <a class="nav-link" href="index.html#contato">Contato</a>
+          </div>
 
-  <div id="navbar-placeholder"></div>
+          <div class="site-nav__actions">
+            <a
+              class="nav-link nav-link--external nav-link--cta is-active"
+              href="grade.html"
+              aria-current="page"
+              >Grade Curricular</a
+            >
+            <div class="a11y-controls a11y-controls--icon" role="group" aria-label="Filtros e tema">
+              <button
+                class="a11y-btn a11y-btn--icon"
+                type="button"
+                data-a11y-action="toggle-vlibras"
+                aria-label="Ativar acessibilidade em Libras"
+                title="Ativar acessibilidade em Libras"
+                aria-pressed="false"
+              >
+                <span class="a11y-glyph" aria-hidden="true">A</span>
+                <span class="sr-only">Ativar acessibilidade em Libras</span>
+              </button>
+              <button
+                class="a11y-btn a11y-btn--icon a11y-btn--theme"
+                type="button"
+                data-a11y-action="toggle-theme"
+                aria-label="Alternar tema claro e escuro"
+                aria-pressed="false"
+              >
+                <svg class="theme-icon theme-icon--sun" viewBox="0 0 24 24" aria-hidden="true">
+                  <circle cx="12" cy="12" r="4"></circle>
+                  <path
+                    d="M12 2v2.2M12 19.8V22M4.93 4.93l1.56 1.56M17.51 17.51l1.56 1.56M2 12h2.2M19.8 12H22M4.93 19.07l1.56-1.56M17.51 6.49l1.56-1.56"
+                  ></path>
+                </svg>
+                <svg class="theme-icon theme-icon--moon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M20 15.31A8 8 0 118.69 4 6.5 6.5 0 0020 15.31z"></path>
+                </svg>
+                <span class="sr-only">Alternar tema</span>
+              </button>
+              <button
+                class="a11y-btn a11y-btn--icon"
+                type="button"
+                data-a11y-action="toggle-colorblind"
+                aria-label="Ativar filtro de daltonismo (Deuteranopia)"
+                title="Ativar filtro de daltonismo (Deuteranopia)"
+                aria-pressed="false"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="M3 3l18 18M10.58 10.59a2 2 0 102.83 2.83M9.88 5.09A10.94 10.94 0 0112 5c5 0 9.27 3.11 11 7-1.08 2.42-3.01 4.45-5.5 5.78M6.61 6.61C4.62 7.91 3.08 9.77 2 12c1.73 3.89 6 7 10 7a10.9 10.9 0 004.23-.85"
+                  ></path>
+                </svg>
+                <span class="sr-only">Alternar filtro de daltonismo Deuteranopia</span>
+              </button>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
 
-  <main id="main-content" class="page-container fade-in-section">
-    <h1>Grade Curricular da Fatec</h1>
+    <main id="main-content" class="grade-main" tabindex="-1">
+      <section class="section section--compact">
+        <div class="container">
+          <header class="section-header reveal">
+            <p class="eyebrow">Fatec</p>
+            <h1>Grade Curricular</h1>
+            <p>Disciplinas organizadas por ano, com conteudo, professor e projeto relacionado.</p>
+          </header>
 
-    <div class="filter-tabs">
-      <button class="filter-btn active" data-semestre="todos">Todos</button>
-      <button class="filter-btn" data-semestre="4">4º Ano</button>
-      <button class="filter-btn" data-semestre="5">5º Ano</button>
-    </div>
-    
-    <div class="disciplinas-grid grid-container" id="disciplinas-grid">
-      <p class="status-message">Carregando disciplinas...</p>
-    </div>
-  </main>
+          <div class="grade-controls reveal" role="group" aria-label="Filtro de disciplinas">
+            <button class="filter-btn is-active" data-semestre="todos" type="button" aria-pressed="true">
+              Todos
+            </button>
+            <button class="filter-btn" data-semestre="4" type="button" aria-pressed="false">4 Ano</button>
+            <button class="filter-btn" data-semestre="5" type="button" aria-pressed="false">5 Ano</button>
+          </div>
 
-  <div class="modal-overlay" id="disciplina-modal">
-    <div class="modal-content">
-      <button class="modal-close" aria-label="Fechar">&times;</button>
-      <h2 id="modal-title"></h2>
-      
-      <p id="modal-resumo"></p>
+          <div class="grade-grid" id="disciplinas-grid" aria-live="polite" aria-busy="true">
+            <p class="status-message">Carregando disciplinas...</p>
+          </div>
+        </div>
+      </section>
+    </main>
 
-      <p class="professor">Professor: <span id="modal-professor"></span></p>
-      
-      <h4>Conteúdo Trabalhado</h4>
-      <ul id="modal-conteudo"></ul>
-      
-      <div id="modal-projeto-container">
-        <h4>Projeto Relacionado</h4>
-        <p id="modal-projeto-titulo"></p>
-        <a href="javascript:void(0)" class="project-link" id="modal-projeto-link" target="_blank" rel="noopener noreferrer">Ver no GitHub</a>
+    <div
+      class="grade-modal"
+      id="disciplina-modal"
+      aria-hidden="true"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modal-title"
+      aria-describedby="modal-resumo grade-modal-help"
+    >
+      <div class="grade-modal-content">
+        <button class="modal-close" type="button" aria-label="Fechar">&times;</button>
+        <h2 id="modal-title"></h2>
+        <p id="grade-modal-help" class="sr-only">Pressione Escape para fechar este dialogo.</p>
+
+        <p id="modal-resumo"></p>
+        <p class="modal-professor">Professor: <span id="modal-professor"></span></p>
+
+        <h3>Conteudo trabalhado</h3>
+        <ul id="modal-conteudo"></ul>
+
+        <div id="modal-projeto-container">
+          <h3>Projeto relacionado</h3>
+          <p id="modal-projeto-titulo"></p>
+          <a
+            id="modal-projeto-link"
+            class="btn btn-primary btn-small"
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Ver no GitHub</a
+          >
+        </div>
       </div>
     </div>
-  </div>
 
-  <div id="footer-placeholder"></div>
+    <footer class="site-footer">
+      <div class="container footer-content">
+        <p>&copy; <span id="year"></span> Guilherme Henrique. Todos os direitos reservados.</p>
+        <div class="footer-links">
+          <a href="index.html#projetos">Projetos</a>
+          <a href="index.html#contato">Contato</a>
+          <a href="https://github.com/GuilhermeOliveira0" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </div>
+      </div>
+    </footer>
 
-  <script src="main.js?v=13" defer></script>
-  
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const disciplinasGrid = document.getElementById('disciplinas-grid');
-        const modal = document.getElementById('disciplina-modal');
-        const modalTitle = document.getElementById('modal-title');
-        const modalResumo = document.getElementById('modal-resumo');
-        const modalProfessor = document.getElementById('modal-professor');
-        const modalConteudo = document.getElementById('modal-conteudo');
-        const modalProjetoContainer = document.getElementById('modal-projeto-container');
-        const modalProjetoTitulo = document.getElementById('modal-projeto-titulo');
-        const modalProjetoLink = document.getElementById('modal-projeto-link');
-        const filterBtns = document.querySelectorAll('.filter-btn');
-        let allDisciplinas = [];
+    <script type="module" src="js/app.js?v=29"></script>
 
-        function renderGrid(disciplinas) {
-            disciplinasGrid.innerHTML = '';
-            if (disciplinas.length === 0) {
-              disciplinasGrid.innerHTML = `<p class="status-message">Nenhuma disciplina encontrada para este ano.</p>`;
-                return;
-            }
-            disciplinas.forEach(disciplina => {
-                const card = document.createElement('div');
-                card.className = 'disciplina-card card';
-                card.dataset.id = disciplina.id;
-                
-                const iconBg = disciplina.iconBg || 'linear-gradient(135deg, #0ea5e9 0%, #2563eb 100%)';
-                const icon = disciplina.icon || '📚';
-                
-                card.innerHTML = `
-                  <div class="disciplina-badge">${disciplina.semestre}º Ano</div>
-                    <div class="disciplina-icon" style="background: ${iconBg};">
-                        ${icon}
-                    </div>
-                    <h3>${disciplina.titulo}</h3>
-                    <p>${disciplina.descricao}</p>
-                `;
-                disciplinasGrid.appendChild(card);
-            });
-        }
-
-        // FUNÇÃO showModal CORRIGIDA
-        function showModal(disciplina) {
-            modalTitle.textContent = disciplina.titulo;
-            modalProfessor.textContent = disciplina.professor;
-            
-            if (disciplina.resumo) {
-                modalResumo.textContent = disciplina.resumo;
-                modalResumo.style.display = 'block';
-            } else {
-                modalResumo.style.display = 'none';
-            }
-
-            modalConteudo.innerHTML = '';
-            disciplina.conteudo.forEach(item => {
-                const li = document.createElement('li');
-                li.textContent = item;
-                modalConteudo.appendChild(li);
-            });
-
-            // LÓGICA DO PROJETO CORRIGIDA
-            if (disciplina.projeto && disciplina.projeto.link) {
-                modalProjetoContainer.style.display = 'block'; // Mostra a seção inteira
-                modalProjetoTitulo.textContent = disciplina.projeto.titulo; // Define o texto do parágrafo
-                modalProjetoLink.href = disciplina.projeto.link; // Define o link do botão
-                modalProjetoLink.style.display = 'inline-block'; // Mostra o botão
-            } else {
-                modalProjetoContainer.style.display = 'none'; // Esconde a seção inteira
-            }
-            
-            modal.classList.add('active');
-        }
-
-        function hideModal() {
-            modal.classList.remove('active');
-        }
-
-        fetch('disciplinas.json')
-            .then(response => {
-                if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-                return response.json();
-            })
-            .then(data => {
-                allDisciplinas = data;
-                renderGrid(allDisciplinas);
-            })
-            .catch(error => {
-                console.error('Erro ao carregar disciplinas.json:', error);
-                disciplinasGrid.innerHTML = `<p class="status-message"><b>Erro ao carregar as disciplinas.</b><br>Verifique o arquivo 'disciplinas.json'.</p>`;
-            });
-        
-        filterBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                filterBtns.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                const semestre = btn.dataset.semestre;
-                const filtered = semestre === 'todos' ? allDisciplinas : allDisciplinas.filter(d => d.semestre == semestre);
-                renderGrid(filtered);
-            });
-        });
-
-        disciplinasGrid.addEventListener('click', (event) => {
-            const card = event.target.closest('.disciplina-card');
-            if (card) {
-                const disciplinaId = card.dataset.id;
-                const disciplinaData = allDisciplinas.find(d => d.id === disciplinaId);
-                if (disciplinaData) showModal(disciplinaData);
-            }
-        });
-
-        modal.querySelector('.modal-close').addEventListener('click', hideModal);
-        modal.addEventListener('click', (event) => {
-            if (event.target === modal) hideModal();
-        });
-
-    });
-  </script>
-<div vw class="enabled">
-  <div vw-access-button class="active"></div>
-  <div vw-plugin-wrapper>
-    <div class="vw-plugin-top-wrapper"></div>
-  </div>
-</div>
-<script src="https://vlibras.gov.br/app/vlibras-plugin.js" onload="new window.VLibras.Widget('https://vlibras.gov.br/app');"></script>
-</body>
+    <div vw class="enabled">
+      <div vw-access-button class="active"></div>
+      <div vw-plugin-wrapper>
+        <div class="vw-plugin-top-wrapper"></div>
+      </div>
+    </div>
+    <script
+      src="https://vlibras.gov.br/app/vlibras-plugin.js"
+      onload="new window.VLibras.Widget('https://vlibras.gov.br/app')"
+    ></script>
+  </body>
 </html>

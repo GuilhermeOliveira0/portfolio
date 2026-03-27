@@ -1,0 +1,10 @@
+node_modules/
+coverage/
+playwright-report/
+test-results/
+img/
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.svg
