@@ -41,7 +41,6 @@ npm run lint
 npm run test:smoke
 ```
 
-O site em producao continua sendo estatico, sem etapa de build.
 
 ## Observacoes
 
